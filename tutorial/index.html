@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tutorial</title>
+  <link href="/buyandshipdemo/assets/css/common.css?24be74b3f89b346768d0" rel="stylesheet">
+  <link href="/buyandshipdemo/assets/css/tutorial.css?24be74b3f89b346768d0" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="app" class="layout">
+
+    <header class="bs-header">
+      <div class="header-l">
+        <i class="header-bars bs-icon">
+      <div class="bs-icon-hamburger" @click="toggleMobileNav" v-show="!visible.mobileNav"></div>
+      <div class="bs-icon-close" @click="toggleMobileNav" v-show="visible.mobileNav" style="display: none;"></div>
+    </i>
+        <a class="header-logo" href="https://www.buyandship.com.tw/">
+          <img class="header-logo-image" alt="logo" src="/buyandshipdemo/assets/img/company_logo_dark.png" srcset="
+            /buyandshipdemo/assets/img/company_logo_dark.png 1x,
+            /buyandshipdemo/assets/img/company_logo_dark@2x.png 2x,
+            /buyandshipdemo/assets/img/company_logo_dark@3x.png 3x
+          ">
+          <img class="header-logo-image-sm" alt="logo" src="/buyandshipdemo/assets/img/company_logo_box.png" srcset="
+            /buyandshipdemo/assets/img/company_logo_box.png 1x,
+            /buyandshipdemo/assets/img/company_logo_box@2x.png 2x,
+            /buyandshipdemo/assets/img/company_logo_box@3x.png 3x
+          ">
+        </a>
+        <nav class="header-nav">
+          <div class="header-nav-item header-nav-item--more">
+            <a class="header-country" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
+              <div class="bs-icon-country"></div>
+              <span>Singapore</span>
+            </a>
+          </div>
+        </nav>
+        <!-- <bs-locale-select /> -->
+      </div>
+      <div class="header-r">
+        <nav class="header-nav">
+          <div class="header-nav-item">
+            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+          </div>
+          <div class="header-nav-item">
+            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/pricing">Pricing</a>
+          </div>
+          <div class="header-nav-item header-nav-item--more">
+            <a href="javascript:;" @click.prevent="toggleNavPanel('shopping')">
+              Shopping Tips
+              <i class="bs-icon-arrow-down"></i>
+            </a>
+          </div>
+          <div class="header-nav-item header-nav-item--more">
+            <a href="javascript:;" @click.prevent="toggleNavPanel('faq')">
+              FAQ
+              <i class="bs-icon-arrow-down"></i>
+            </a>
+          </div>
+        </nav>
+
+        <div bs-logout class="header-r-member">
+          <a class="header-member" href="https://www.buyandship.com.tw/login/">
+            <i class="header-member-icon bs-icon-user"></i>
+            <span class="header-member-icon-desc text-subtitle-sm">Log&nbsp;in</span>
+          </a>
+          <!-- <div class="header-member-sign-sm text-subtitle-sm" @click="signup">Sign&nbsp;up</div> -->
+          <button class="bs-button header-member-sign text-subtitle-sm bs-button--primary bs-button--md" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
+            SIGN&nbsp;UP
+          </button>
+        </div>
+
+        <div bs-login class="header-r-member">
+          <a class="header-member header-member--m" href="https://www.buyandship.com.tw/account">
+            <i class="header-member-icon bs-icon-user"></i>
+            <span class="header-member-icon-desc text-subtitle-sm">Hi, Christ Shui</span>
+          </a>
+          <a class="header-member header-member--pc" href="https://www.buyandship.com.tw/account">
+            <i class="header-member-icon bs-icon-user"></i>
+            <span class="header-member-icon-desc text-subtitle-sm">My Account</span>
+          </a>
+          <aside class="header-account">
+            <div class="header-account-overlay"></div>
+            <ul class="header-account-list">
+              <li class="header-account-list-item"><a href="">My Account</a></li>
+              <li class="header-account-list-item"><a href="">My Profile</a></li>
+              <li class="header-account-list-item"><a href="">Overseas Warehouses</a></li>
+              <li class="header-account-list-item"><a href="">My Shipments</a></li>
+              <li class="header-account-list-item"><a href="">My Orders</a></li>
+              <li class="header-account-list-item"><a href="">Log out</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <bs-nav-panel v-model="isShowNav.shopping" @on-hide="currentNav = ''" v-cloak>
+      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Discounts</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Latest news</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Features Shopping Site</a>
+    </bs-nav-panel>
+    <bs-nav-panel v-model="isShowNav.faq" @on-hide="currentNav = ''" v-cloak>
+      <a class="text-h4" href="https://www.buyandship.com.tw/faq">FAQ</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/warehouses">Our Warehouses</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/restrictions">Prohebit Items</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/contact-us">Contact Us</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/advantage">Advantage</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/insurance">Insurance</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/terms">Terms</a>
+      <a class="text-h4" href="https://www.buyandship.com.tw/privacy">Privacy and Policy</a>
+    </bs-nav-panel>
+    <bs-nav-panel v-model="isShowNav.country" @on-hide="currentNav = ''" v-cloak>
+      <div class="country-title text-h6">Select country</div>
+      <a-row>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.tw/">
+            <span class="icon-flag-tw"></span>
+            <span class="ml">Taiwan</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://mo.buynship.com/">
+            <span class="icon-flag-mo"></span>
+            <span class="ml">Macau</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.today/">
+            <span class="icon-flag-hk"></span>
+            <span class="ml">Hong Kong</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.cn/">
+            <span class="icon-flag-cn"></span>
+            <span class="ml">China</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.co.jp/">
+            <span class="icon-flag-jp"></span>
+            <span class="ml">Japan</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://au.buynship.com/">
+            <span class="icon-flag-au"></span>
+            <span class="ml">Australia</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.sg/">
+            <span class="icon-flag-sg"></span>
+            <span class="ml">Singapore</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.my/">
+            <span class="icon-flag-my"></span>
+            <span class="ml">Malaysia</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://www.buyandship.in/">
+            <span class="icon-flag-in"></span>
+            <span class="ml">India</span>
+          </a>
+        </a-col>
+        <a-col class="country-card" :xs="12" :md="12" :xl="12">
+          <a class="country-item text-subtitle-sm" href="https://ae.buynship.com/">
+            <span class="icon-flag-ea"></span>
+            <span class="ml">UAE</span>
+          </a>
+        </a-col>
+      </a-row>
+
+      <!-- <a href="#" style="display: inline-block"><span>Singapore</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Malaysia</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Hong Kong</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Macau</span></a>
+        </li>
+        <li>
+          <a href="#"><span>China</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Japan</span></a>
+        </li>
+        <li>
+          <a href="#"><span>India</span></a>           -->
+
+    </bs-nav-panel>
+    <aside class="mobile-nav" :class="{ 'mobile-nav-open': visible.mobileNav }" v-cloak>
+      <div class="mobile-nav-inner">
+        <nav class="slinky-menu slinky-theme-default">
+          <ul>
+            <li bs-login>
+              <a href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">My Account</span></a>
+            </li>
+            <li bs-login>
+              <a href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">Overseas Warehouses</span></a>
+            </li>
+            <li bs-login>
+              <a href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">My Shipments</span></a>
+            </li>
+            <li bs-login>
+              <a class="slinky-menu__underline" href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">My Orders</span></a>
+            </li>
+            <li>
+              <a href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">Tutorial</span></a>
+            </li>
+            <li>
+              <a href="https://www.buyandship.com.tw/pricing"><span
+                  class="text-subtitle-sm">Pricing</span></a>
+            <li>
+              <a href="#" class="next"><span class="text-subtitle-sm">Shopping Tips</span></a>
+              <ul>
+                <li>
+                  <a href="https://www.buyandship.com.tw/shopping"><span>Shopping</span></a>
+                <li>
+                <li>
+                  <a href="https://www.buyandship.com.tw/restrictions"><span>Restrictions</span></a>
+                </li>
+                <!-- <li>
+                  <a href="#" class="next"><span>Led Zeppelin</span></a>
+                  <ul>
+                    <li>
+                      <a href="#" class="next"><span>Physical Graffiti</span></a>
+                      <ul>
+                        <li>
+                          <a href="#"><span>Houses of the Holy</span></a>
+                        </li>
+                        <li>
+                          <a href="#"><span>In My Time of Dying</span></a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li> -->
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="next slinky-menu__underline">
+                <span class="text-subtitle-sm">FAQ</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="https://www.buyandship.com.tw/faq"><span>FAQ</span></a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.tw/warehouses"><span>Our Warehouses</span></a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.tw/contact-us"><span>Contact Us</span></a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.tw/terms"><span>Terms</span></a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.tw/privacy"><span>Privacy and Policy</span></a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="next"><span class="text-subtitle-sm">Country & Region</span></a>
+              <ul>
+                <li>
+                  <a href="https://www.buyandship.com.tw/">
+                    <i class="slinky-link__icon icon-flag-tw-md"></i>
+                    <span class="slinky-link__desc ml">Taiwan</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://mo.buynship.com/">
+                    <i class="slinky-link__icon icon-flag-mo-md"></i>
+                    <span class="slinky-link__desc ml">Macau</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.today/">
+                    <i class="slinky-link__icon icon-flag-hk-md"></i>
+                    <span class="slinky-link__desc ml">Hong Kong</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.cn/">
+                    <i class="slinky-link__icon icon-flag-cn-md"></i>
+                    <span class="slinky-link__desc ml">China</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.co.jp/">
+                    <i class="slinky-link__icon icon-flag-jp-md"></i>
+                    <span class="slinky-link__desc ml">Japan</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://au.buynship.com/">
+                    <i class="slinky-link__icon icon-flag-au-md"></i>
+                    <span class="slinky-link__desc ml">Australia</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.sg/">
+                    <i class="slinky-link__icon icon-flag-sg-md"></i>
+                    <span class="slinky-link__desc ml">Singapore</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.com.my/">
+                    <i class="slinky-link__icon icon-flag-my-md"></i>
+                    <span class="slinky-link__desc ml">Malaysia</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.buyandship.in/">
+                    <i class="slinky-link__icon icon-flag-in-md"></i>
+                    <span class="slinky-link__desc ml">India</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://ae.buynship.com/">
+                    <i class="slinky-link__icon icon-flag-ea-md"></i>
+                    <span class="slinky-link__desc ml">UAE</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- <li>
+              <a href="#" class="next"><span class="text-subtitle-sm">Language</span></a>
+              <ul>
+                <li>
+                  <a href="#"><span>English</span></a>
+                </li>
+                <li>
+                  <a href="#"><span>繁體中文</span></a>
+                </li>
+                <li>
+                  <a href="#"><span>簡体中文</span></a>
+                </li>
+              </ul>
+            </li> -->
+            <li bs-login>
+              <a href="https://www.buyandship.com.tw/tutorial"><span
+                  class="text-subtitle-sm">Log out</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="mobile-nav-spacer">
+        <!-- <div class="mobile-nav-mask" v-show="!isMobileNavScrollBottom"></div> -->
+      </div>
+    </aside>
+
+    <transition name="opacity" v-cloak>
+      <div class="bs-overlay" v-show="visible.overlay" @click="hideNavPanel"></div>
+    </transition>
+
+    <bs-header-login ref="loginPanel"></bs-header-login>
+    <bs-header-signup ref="signupPanel"></bs-header-signup>
+    <bs-header-forget-password ref="forgetpasswordPanel"></bs-header-forget-password>
+    <bs-header-reset-password ref="resetpasswordPanel"></bs-header-reset-password>
+
+
+    <!-- WP:start -->
+
+    <bs-default-header-sticky v-cloak>
+      <span class="pointer" v-show="currentTitle" @click="scrollToTitle">{{ currentTitle }}</span>
+      <span v-show="currentSubtitle">&nbsp;>&nbsp;</span>
+      <span class="pointer" v-show="currentSubtitle" @click="scrollToSubtitle">{{ currentSubtitle }}</span>
+    </bs-default-header-sticky>
+
+    <main class="main">
+      <div class="bs-banner">
+        <div class="bs-container">
+          <div class="bs-banner-title">
+            A guide for how to use Buyandship
+          </div>
+          <div class="bs-banner-subtitle">
+            See how easy it is to shop online at your favorite retailers and ship internationally with Buyandship.
+          </div>
+          <div class="bs-banner-link text-subtitle-sm">
+            <a href="#" @click.prevent="openVideo('https://www.youtube.com/watch?v=Tj7346AVTqc&feature=emb_title')">
+              WATCH VIDEO</a>
+          </div>
+        </div>
+      </div>
+      <article class="bs-container bs-container--paddingV">
+        <section class="section section--progress">
+          <div class="progress-title text-h5 js-content-anchor" data-title="How to use ?" data-subtitle="">How to use ?</div>
+          <div class="progress-step-container">
+            <div class="progress-step progress-step--1">
+              <div class="progress-step-media">
+                <img class="progress-step-media-image" src="/buyandshipdemo/assets/img/howitworks_1.png" srcset="
+                /buyandshipdemo/assets/img/howitworks_1.png 1x,
+                /buyandshipdemo/assets/img/howitworks_1@2x.png 2x,
+                /buyandshipdemo/assets/img/howitworks_1@3x.png 3x
+              ">
+              </div>
+              <div class="progress-step-bar">
+                <div class="progress-step-bar-dot"></div>
+                <div class="progress-step-bar-line"></div>
+              </div>
+              <div class="progress-step-content">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Get your overseas addresses">
+                  <span><i class="bs-icon-overseas-house"></i></span>
+                  <span class="step-title">Get your overseas addresses</span>
+                </div>
+                <div class="progress-step-content-desc">Register with us to get your very own overseas addresses. Use them as your delivery addresses when shopping from worldwide online stores.</div>
+                <div class="progress-step-action">
+                  <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
+                    GET IT NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="progress-step progress-step--2">
+              <div class="progress-step-media">
+                <img class="progress-step-media-image" src="/buyandshipdemo/assets/img/howitworks_2.png" srcset="
+                /buyandshipdemo/assets/img/howitworks_2.png 1x,
+                /buyandshipdemo/assets/img/howitworks_2@2x.png 2x,
+                /buyandshipdemo/assets/img/howitworks_2@3x.png 3x
+              ">
+              </div>
+              <div class="progress-step-bar">
+                <div class="progress-step-bar-dot"></div>
+                <div class="progress-step-bar-line"></div>
+              </div>
+              <div class="progress-step-content">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Start Shopping Online!">
+                  <span><i class="bs-icon-shop-bag"></i></span>
+                  <span class="step-title">Start Shopping Online!</span>
+                </div>
+                <div class="progress-step-content-desc">Buy from your favorite online stores worldwide and send your purchases to your new overseas address.</div>
+                <div class="progress-step-action">
+                  <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('/shopping')">
+                    EXPLORE SHOPPING SITES
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="progress-step progress-step--3">
+              <div class="progress-step-media">
+                <img class="progress-step-media-image" src="/buyandshipdemo/assets/img/howitworks_3.png" srcset="
+                /buyandshipdemo/assets/img/howitworks_3.png 1x,
+                /buyandshipdemo/assets/img/howitworks_3@2x.png 2x,
+                /buyandshipdemo/assets/img/howitworks_3@3x.png 3x
+              ">
+              </div>
+              <div class="progress-step-bar">
+                <div class="progress-step-bar-dot"></div>
+                <div class="progress-step-bar-line"></div>
+              </div>
+              <div class="progress-step-content">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Declare your parcel">
+                  <span><i class="bs-icon-declare-done"></i></span>
+                  <span class="step-title">Declare your parcel</span>
+                </div>
+                <div class="progress-step-content-desc">As soon as you’ve received the Tracking Number and Shipping Courier details from the seller, you candeclare your parcel on our website or APP. Click here to add a new Shipment” at our membership centre</div>
+                <div class="progress-step-action">
+                  <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
+                    ADD A NEW SHIPMENT
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="progress-step progress-step--4">
+              <div class="progress-step-media">
+                <img class="progress-step-media-image" src="/buyandshipdemo/assets/img/howitworks_4.png" srcset="
+                /buyandshipdemo/assets/img/howitworks_4.png 1x,
+                /buyandshipdemo/assets/img/howitworks_4@2x.png 2x,
+                /buyandshipdemo/assets/img/howitworks_4@3x.png 3x
+              ">
+              </div>
+              <div class="progress-step-bar">
+                <div class="progress-step-bar-dot"></div>
+                <div class="progress-step-bar-line"></div>
+              </div>
+              <div class="progress-step-content">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Consolidation & Payment">
+                  <span><i class="bs-icon-consolidate"></i></span>
+                  <span class="step-title">Consolidation & Payment</span>
+                </div>
+                <div class="progress-step-content-desc">When your parcel is delivered at our Hong Kong warehouse, payment is easy! You have options to pay by Buyandship Points / Credit Card Payment. We also offer consolidation service by combining multiple orders into one box to save you on the international shipping fee</div>
+                <div class="progress-step-action">
+                  <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('/pricing')">
+                    Calculate Delivery Fee
+                  </button class="step-title">
+                </div>
+              </div>
+            </div>
+            <div class="progress-step progress-step--5">
+              <div class="progress-step-media">
+                <img class="progress-step-media-image" src="/buyandshipdemo/assets/img/howitworks_5.png" srcset="
+                /buyandshipdemo/assets/img/howitworks_5.png 1x,
+                /buyandshipdemo/assets/img/howitworks_5@2x.png 2x,
+                /buyandshipdemo/assets/img/howitworks_5@3x.png 3x
+              ">
+              </div>
+              <div class="progress-step-bar">
+                <div class="progress-step-bar-dot"></div>
+              </div>
+              <div class="progress-step-content">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Your box is delivered to you">
+                  <span><i class="bs-icon-order-done"></i></span>
+                  <span class="step-title">Your box is delivered to you</span>
+                </div>
+                <div class="progress-step-content-desc">Your parcel will be at your doorstep as quickly as 3 business days. Our online tracking gives you status updates as your shipment speeds through our website and APP. <br /><br /> Repeat these steps as many times as you like. We love getting packages just as much as you do.</div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section class="section section--pricing">
+          <div class="pricing-title text-h5 js-content-anchor" data-title="Cut Off / Shipping Time" data-subtitle="">
+            Cut Off / Shipping Time
+            <div class="pricing-title-deco"></div>
+          </div>
+          <div class="scheme">
+            <div class="scheme-section">
+              <div class="scheme-card-container">
+                <div class="scheme-card">
+                  <div class="scheme-cloumn">
+                    <section class="scheme-section scheme-flags">
+                      <div class="scheme-flags-container">
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-us-md"></i>
+                          <span class="scheme-flags-icon-name">
+                        US
+                      </span>
+                        </div>
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-kr-md"></i>
+                          <span class="scheme-flags-icon-name">
+                        KR
+                      </span>
+                        </div>
+                      </div>
+                    </section>
+                    <!-- <section class="scheme-section scheme-pricing">
+                  <div class="text-h4">$150</div> <div class="text-notice">Every Pound (NT$)</div>
+                </section> -->
+                    <section class="scheme-section scheme-parcel-info">
+                      <ul>
+                        <li>5 times a week</li>
+                        <li>Every Tuesday to Saturday HK</li>
+                      </ul>
+                    </section>
+                  </div>
+                  <div class="scheme-cloumn">
+                    <section class="scheme-section scheme-flags">
+                      <div class="scheme-flags-container">
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-us-md"></i>
+                          <span class="scheme-flags-icon-name">US</span>
+                        </div>
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-sg-md"></i>
+                          <span class="scheme-flags-icon-name">SG</span>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="scheme-section scheme-parcel-info">
+                      <ul>
+                        <li>5 times a week</li>
+                        <li>Every Tuesday to Saturday HK</li>
+                      </ul>
+                    </section>
+                  </div>
+                  <div class="scheme-cloumn">
+                    <section class="scheme-section scheme-flags">
+                      <div class="scheme-flags-container">
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-tw-md"></i>
+                          <span class="scheme-flags-icon-name">TW</span>
+                        </div>
+                        <div class="scheme-flags-icon">
+                          <i class="icon-flag-sg-md"></i>
+                          <span class="scheme-flags-icon-name">SG</span>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="scheme-section scheme-parcel-info">
+                      <ul>
+                        <li>5 times a week</li>
+                        <li>Every Tuesday to Saturday HK</li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <section class="scheme-section scheme-info">
+                <input id="scheme-info-field--Europe" type="checkbox" class="scheme-info-field">
+                <label for="scheme-info-field--Europe" class="scheme-info-straw">
+                  <span class="icon-info"></span>
+                  <span
+                class="text-subtitle-sm scheme-info-field-title">More infomation</span>
+                  <span class="icon-pricing-arrow-down"></span>
+                </label>
+                <div class="scheme-info-centent">
+                  <ul class="scheme-info-centent-list">
+                    <li>Customers can purchase products from multiple global online stores and have them conveniently delivered in one parcel.</li>
+                    <li>Packages arriving from our overseas warehouses will be checked out as soon as possible</li>
+                    <li>When the delivery status of the package has changed to “Check Out”, it means that the package has been arranged for delivery to our HK warehouse</li>
+                    <li>Arrival time will be postponed by global public holidays</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+        <section class="section section--faq">
+          <div class="bs-container">
+            <div class="faq-title text-h5 js-content-anchor" data-title="Top questions from our customers" data-subtitle="">
+              <div>
+                Top questions from our customers
+              </div>
+              <div class="faq-title-deco"></div>
+            </div>
+            <div class="contact-second">
+              <div class="contact-second-item">
+                <i class="bs-icon-query"></i>
+                <div class="text-h6">General Enquiries</div>
+                <div class="contact-second-item-link">
+                  <a href="#">How to calculate the delivery fee</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a>What should I insert for “delivery address”</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a>I cannot find a tracking number</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a class="contact-second-item-link-arrow text-subtitle-sm">MORE</a>
+                </div>
+              </div>
+              <div class="contact-second-item">
+                <i class="bs-icon-parcel"></i>
+                <div class="text-h6">Shipments Enquiries</div>
+                <div class="contact-second-item-link">
+                  <a href="">What is the shipment schedule</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Shipment query 2</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Shipment query 3</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                </div>
+              </div>
+              <div class="contact-second-item">
+                <i class="bs-icon-faq" data-name="truck"></i>
+                <div class="text-h6">Order Enquiries</div>
+                <div class="contact-second-item-link">
+                  <a href="">Order query 1</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Order query 2</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Order query 3</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                </div>
+              </div>
+              <div class="contact-second-item">
+                <i class="bs-icon-lost-parcel"></i>
+                <div class="text-h6">Lost or Damaged</div>
+                <div class="contact-second-item-link">
+                  <a href="">Lost or Damaged query 1</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Lost or Damaged query 2</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">Lost or Damaged query 3</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                </div>
+              </div>
+              <div class="contact-second-item">
+                <i class="bs-icon-plus"></i>
+                <div class="text-h6">More</div>
+                <div class="contact-second-item-link">
+                  <a href="">Legal, privacy, and other quiries</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">More query 2</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a href="">More query 3</a>
+                </div>
+                <div class="contact-second-item-link">
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <bs-dialog v-model="isShowDialog">
+        <div class="bs-tutorial__video">
+          <iframe width="840" height="473" src="https://www.youtube.com/embed/Tj7346AVTqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+      </bs-dialog>
+    </main>
+
+    <!-- WP:end -->
+
+    <footer class="bs-footer" v-cloak>
+      <div class="footer-graphic" v-if="isShowGraphic">
+        <picture>
+          <source media="(max-width: 1199px)" srcset="
+              /buyandshipdemo/assets/img/footer_768px.png 1x,
+              /buyandshipdemo/assets/img/footer_768px@2x.png 2x,
+              /buyandshipdemo/assets/img/footer_768px@3x.png 3x
+            " sizes="100vw">
+          <source media="(min-width: 1200px)" srcset="
+              /buyandshipdemo/assets/img/footer_1440px.png 1440w,
+              /buyandshipdemo/assets/img/footer_1440px@2x.png 2880w,
+              /buyandshipdemo/assets/img/footer_1440px@3x.png 4320w
+            " sizes="100vw">
+          <img class="footer-graphic-media" src="/buyandshipdemo/assets/img/footer_1440px.png" alt="cat is shipping">
+        </picture>
+      </div>
+      <div class="bs-container">
+        <a-row class="footer-nav" :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
+          <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
+            <div class="footer-nav-group-label">Shop</div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/blog-list">Discount</a>
+            </div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/blog-list">Lastest news</a>
+            </div>
+          </a-col>
+          <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
+            <div class="footer-nav-group-label">Ship</div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+            </div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/pricing">Pricing</a>
+            </div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/advantage">Advantages</a>
+            </div>
+          </a-col>
+          <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
+            <div class="footer-nav-group-label">About</div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/about-us">Buyandship Singapore Pte. Ltd</a>
+            </div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/warehouses">Warehouse Locations</a>
+            </div>
+            <div class="footer-nav-group-item">
+              <a href="https://www.buyandship.com.tw/contact-us">Contact</a>
+            </div>
+          </a-col>
+          <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
+            <div class="footer-social">
+              <div class="footer-social-box">
+                <a class="footer-social-box-link" href="https://www.facebook.com/buyandship.com.tw">
+                  <i class="bs-icon">
+                    <span class="bs-icon-facebook"></span>
+                  </i>
+                </a>
+                <a class="footer-social-box-link" href="https://www.instagram.com/buyandship.tw">
+                  <i class="bs-icon">
+                    <span class="bs-icon-instagram"></span>
+                  </i>
+                </a>
+                <a class="footer-social-box-link" href="https://www.youtube.com/channel/UCyoFLixf25b55MuiDaGgtvA">
+                  <i class="bs-icon">
+                    <span class="bs-icon-youtube"></span>
+                  </i>
+                </a>
+              </div>
+            </div>
+            <div class="footer-location">
+              <div class="footer-location-icon">
+                <i class="bs-icon-environment" style="margin-left: -6px;"></i>
+              </div>
+              <div class="footer-location-desc">Head office: RM706, 7/F., Join-in Hang Sing Centre, 2-16 Kwai Fung Crescent, Kwai Chung, NT.</div>
+            </div>
+            <div class="footer-download">
+              <a class="footer-download-link" href="#">
+                <img class="footer-download-link-media" alt="AppStore" src="/buyandshipdemo/assets/img/AppStore_200px@2x.png" srcset="
+                    /buyandshipdemo/assets/img/AppStore_200px@2x.png 1x,
+                    /buyandshipdemo/assets/img/AppStore_200px@2x.png 2x,
+                    /buyandshipdemo/assets/img/AppStore_200px@3x.png 3x
+                  ">
+              </a>
+              <a class="footer-download-link" href="#">
+                <img class="footer-download-link-media" alt="GooglePlay" src="/buyandshipdemo/assets/img/GooglePlay_200px@2x.png" srcset="
+                    /buyandshipdemo/assets/img/GooglePlay_200px@2x.png 1x,
+                    /buyandshipdemo/assets/img/GooglePlay_200px@2x.png 2x,
+                    /buyandshipdemo/assets/img/GooglePlay_200px@3x.png 3x
+                  ">
+              </a>
+            </div>
+          </a-col>
+        </a-row>
+        <div class="footer-bottom">
+          <div class="footer-country">
+            <a class="footer-country-link" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
+              <i class="bs-icon-country"></i>
+              <span>Singapore</span>
+            </a>
+          </div>
+          <div class="footer-copyright">
+            <span class="footer-copyright-desc"> © 2019 E-BUY Global Limited.</span>
+            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/terms">Terms of Use</a>
+            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/privacy">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="/buyandshipdemo/assets/js/common.js?24be74b3f89b346768d0"></script>
+  <script src="/buyandshipdemo/assets/js/tutorial.js?24be74b3f89b346768d0"></script>
+</body>
+
+</html>
