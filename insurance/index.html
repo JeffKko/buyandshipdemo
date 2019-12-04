@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>insurance</title>
-  <link href="/buyandshipdemo/assets/css/common.css?24be74b3f89b346768d0" rel="stylesheet">
-  <link href="/buyandshipdemo/assets/css/insurance.css?24be74b3f89b346768d0" rel="stylesheet">
+  <link href="/buyandshipdemo/assets/css/common.css?02b96dc10fd0998eed5c" rel="stylesheet">
+  <link href="/buyandshipdemo/assets/css/insurance.css?02b96dc10fd0998eed5c" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       <div class="bs-icon-hamburger" @click="toggleMobileNav" v-show="!visible.mobileNav"></div>
       <div class="bs-icon-close" @click="toggleMobileNav" v-show="visible.mobileNav" style="display: none;"></div>
     </i>
-        <a class="header-logo" href="https://www.buyandship.com.tw/">
+        <a class="header-logo" href="/">
           <img class="header-logo-image" alt="logo" src="/buyandshipdemo/assets/img/company_logo_dark.png" srcset="
             /buyandshipdemo/assets/img/company_logo_dark.png 1x,
             /buyandshipdemo/assets/img/company_logo_dark@2x.png 2x,
@@ -36,7 +36,7 @@
           <div class="header-nav-item header-nav-item--more">
             <a class="header-country" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
               <div class="bs-icon-country"></div>
-              <span>Singapore</span>
+              <span>台灣</span>
             </a>
           </div>
         </nav>
@@ -45,20 +45,20 @@
       <div class="header-r">
         <nav class="header-nav">
           <div class="header-nav-item">
-            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+            <a class="header-nav-item-link" href="/tutorial">代運使用教學</a>
           </div>
           <div class="header-nav-item">
-            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/pricing">Pricing</a>
+            <a class="header-nav-item-link" href="/pricing">運費計算</a>
           </div>
           <div class="header-nav-item header-nav-item--more">
             <a href="javascript:;" @click.prevent="toggleNavPanel('shopping')">
-              Shopping Tips
+              精選購物網站
               <i class="bs-icon-arrow-down"></i>
             </a>
           </div>
           <div class="header-nav-item header-nav-item--more">
             <a href="javascript:;" @click.prevent="toggleNavPanel('faq')">
-              FAQ
+              常見問題
               <i class="bs-icon-arrow-down"></i>
             </a>
           </div>
@@ -67,32 +67,32 @@
         <div bs-logout class="header-r-member">
           <a class="header-member" href="https://www.buyandship.com.tw/login/">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">Log&nbsp;in</span>
+            <span class="header-member-icon-desc text-subtitle-sm">登入</span>
           </a>
           <!-- <div class="header-member-sign-sm text-subtitle-sm" @click="signup">Sign&nbsp;up</div> -->
           <button class="bs-button header-member-sign text-subtitle-sm bs-button--primary bs-button--md" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
-            SIGN&nbsp;UP
+            註冊
           </button>
         </div>
 
         <div bs-login class="header-r-member">
           <a class="header-member header-member--m" href="https://www.buyandship.com.tw/account">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">Hi, Christ Shui</span>
+            <span class="header-member-icon-desc text-subtitle-sm">你好，Christ Shui</span>
           </a>
           <a class="header-member header-member--pc" href="https://www.buyandship.com.tw/account">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">My Account</span>
+            <span class="header-member-icon-desc text-subtitle-sm">我的帳戶</span>
           </a>
           <aside class="header-account">
             <div class="header-account-overlay"></div>
             <ul class="header-account-list">
-              <li class="header-account-list-item"><a href="">My Account</a></li>
-              <li class="header-account-list-item"><a href="">My Profile</a></li>
-              <li class="header-account-list-item"><a href="">Overseas Warehouses</a></li>
-              <li class="header-account-list-item"><a href="">My Shipments</a></li>
-              <li class="header-account-list-item"><a href="">My Orders</a></li>
-              <li class="header-account-list-item"><a href="">Log out</a></li>
+              <li class="header-account-list-item"><a href="">我的帳戶</a></li>
+              <li class="header-account-list-item"><a href="">個人資料</a></li>
+              <li class="header-account-list-item"><a href="">海外倉庫</a></li>
+              <li class="header-account-list-item"><a href="">我的貨物</a></li>
+              <li class="header-account-list-item"><a href="">我的轉運單</a></li>
+              <li class="header-account-list-item"><a href="">登出</a></li>
             </ul>
           </aside>
         </div>
@@ -100,81 +100,81 @@
     </header>
 
     <bs-nav-panel v-model="isShowNav.shopping" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Discounts</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Latest news</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Features Shopping Site</a>
+      <a class="text-h4" href="/shopping">發燒話題</a>
+      <a class="text-h4" href="/shopping">最新消息</a>
+      <a class="text-h4" href="/shopping">精選購物網站</a>
     </bs-nav-panel>
     <bs-nav-panel v-model="isShowNav.faq" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="https://www.buyandship.com.tw/faq">FAQ</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/warehouses">Our Warehouses</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/restrictions">Prohebit Items</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/contact-us">Contact Us</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/advantage">Advantage</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/insurance">Insurance</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/terms">Terms</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/privacy">Privacy and Policy</a>
+      <a class="text-h4" href="/faq">常見問題</a>
+      <a class="text-h4" href="/warehouses">海外倉庫一覽</a>
+      <a class="text-h4" href="/restrictions">禁運物品目錄</a>
+      <a class="text-h4" href="/contact-us">聯絡我們</a>
+      <a class="text-h4" href="/advantage">我們的優勢</a>
+      <a class="text-h4" href="/insurance">貨物保價服務</a>
+      <a class="text-h4" href="/terms">使用條款</a>
+      <a class="text-h4" href="/privacy">隱私政策</a>
     </bs-nav-panel>
     <bs-nav-panel v-model="isShowNav.country" @on-hide="currentNav = ''" v-cloak>
-      <div class="country-title text-h6">Select country</div>
+      <div class="country-title text-h6">請選擇國家或地區</div>
       <a-row>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.tw/">
             <span class="icon-flag-tw"></span>
-            <span class="ml">Taiwan</span>
+            <span class="ml">台灣</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://mo.buynship.com/">
             <span class="icon-flag-mo"></span>
-            <span class="ml">Macau</span>
+            <span class="ml">澳門</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.today/">
             <span class="icon-flag-hk"></span>
-            <span class="ml">Hong Kong</span>
+            <span class="ml">香港</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.cn/">
             <span class="icon-flag-cn"></span>
-            <span class="ml">China</span>
+            <span class="ml">中國</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.co.jp/">
             <span class="icon-flag-jp"></span>
-            <span class="ml">Japan</span>
+            <span class="ml">日本</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://au.buynship.com/">
             <span class="icon-flag-au"></span>
-            <span class="ml">Australia</span>
+            <span class="ml">澳洲</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.sg/">
             <span class="icon-flag-sg"></span>
-            <span class="ml">Singapore</span>
+            <span class="ml">新加坡</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.my/">
             <span class="icon-flag-my"></span>
-            <span class="ml">Malaysia</span>
+            <span class="ml">馬來西亞</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.in/">
             <span class="icon-flag-in"></span>
-            <span class="ml">India</span>
+            <span class="ml">印度</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://ae.buynship.com/">
             <span class="icon-flag-ea"></span>
-            <span class="ml">UAE</span>
+            <span class="ml">阿聯酋</span>
           </a>
         </a-col>
       </a-row>
@@ -205,36 +205,36 @@
         <nav class="slinky-menu slinky-theme-default">
           <ul>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Account</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">我的帳戶</span></a>
             </li>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Overseas Warehouses</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">海外倉庫</span></a>
             </li>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Shipments</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">我的貨物</span></a>
             </li>
             <li bs-login>
-              <a class="slinky-menu__underline" href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Orders</span></a>
+              <a class="slinky-menu__underline" href="/tutorial"><span
+                  class="text-subtitle-sm">我的轉運單</span></a>
             </li>
             <li>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Tutorial</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">代運使用教學</span></a>
             </li>
             <li>
-              <a href="https://www.buyandship.com.tw/pricing"><span
-                  class="text-subtitle-sm">Pricing</span></a>
+              <a href="/pricing"><span
+                  class="text-subtitle-sm">運費計算</span></a>
             <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">Shopping Tips</span></a>
+              <a href="#" class="next"><span class="text-subtitle-sm">精選購物網站</span></a>
               <ul>
                 <li>
-                  <a href="https://www.buyandship.com.tw/shopping"><span>Shopping</span></a>
+                  <a href="/shopping"><span>購物</span></a>
                 <li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/restrictions"><span>Restrictions</span></a>
+                  <a href="/restrictions"><span>貨物限制</span></a>
                 </li>
                 <!-- <li>
                   <a href="#" class="next"><span>Led Zeppelin</span></a>
@@ -256,87 +256,87 @@
             </li>
             <li>
               <a href="#" class="next slinky-menu__underline">
-                <span class="text-subtitle-sm">FAQ</span>
+                <span class="text-subtitle-sm">常見問題</span>
               </a>
               <ul>
                 <li>
-                  <a href="https://www.buyandship.com.tw/faq"><span>FAQ</span></a>
+                  <a href="/faq"><span>常見問題</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/warehouses"><span>Our Warehouses</span></a>
+                  <a href="/warehouses"><span>海外倉庫一覽</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/contact-us"><span>Contact Us</span></a>
+                  <a href="/contact-us"><span>聯絡我們</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/terms"><span>Terms</span></a>
+                  <a href="/terms"><span>使用條款</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/privacy"><span>Privacy and Policy</span></a>
+                  <a href="/privacy"><span>隱私政策</span></a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">Country & Region</span></a>
+              <a href="#" class="next"><span class="text-subtitle-sm">國家及地區</span></a>
               <ul>
                 <li>
                   <a href="https://www.buyandship.com.tw/">
                     <i class="slinky-link__icon icon-flag-tw-md"></i>
-                    <span class="slinky-link__desc ml">Taiwan</span>
+                    <span class="slinky-link__desc ml">台灣</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://mo.buynship.com/">
                     <i class="slinky-link__icon icon-flag-mo-md"></i>
-                    <span class="slinky-link__desc ml">Macau</span>
+                    <span class="slinky-link__desc ml">澳門</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.today/">
                     <i class="slinky-link__icon icon-flag-hk-md"></i>
-                    <span class="slinky-link__desc ml">Hong Kong</span>
+                    <span class="slinky-link__desc ml">香港</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.cn/">
                     <i class="slinky-link__icon icon-flag-cn-md"></i>
-                    <span class="slinky-link__desc ml">China</span>
+                    <span class="slinky-link__desc ml">中國</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.co.jp/">
                     <i class="slinky-link__icon icon-flag-jp-md"></i>
-                    <span class="slinky-link__desc ml">Japan</span>
+                    <span class="slinky-link__desc ml">日本</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://au.buynship.com/">
                     <i class="slinky-link__icon icon-flag-au-md"></i>
-                    <span class="slinky-link__desc ml">Australia</span>
+                    <span class="slinky-link__desc ml">澳洲</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.com.sg/">
                     <i class="slinky-link__icon icon-flag-sg-md"></i>
-                    <span class="slinky-link__desc ml">Singapore</span>
+                    <span class="slinky-link__desc ml">新加坡</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.com.my/">
                     <i class="slinky-link__icon icon-flag-my-md"></i>
-                    <span class="slinky-link__desc ml">Malaysia</span>
+                    <span class="slinky-link__desc ml">馬來西亞</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.in/">
                     <i class="slinky-link__icon icon-flag-in-md"></i>
-                    <span class="slinky-link__desc ml">India</span>
+                    <span class="slinky-link__desc ml">印度</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://ae.buynship.com/">
                     <i class="slinky-link__icon icon-flag-ea-md"></i>
-                    <span class="slinky-link__desc ml">UAE</span>
+                    <span class="slinky-link__desc ml">阿聯酋</span>
                   </a>
                 </li>
               </ul>
@@ -356,8 +356,8 @@
               </ul>
             </li> -->
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Log out</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">登出</span></a>
             </li>
           </ul>
         </nav>
@@ -383,24 +383,24 @@
       <div class="bs-banner">
         <div class="bs-container">
           <div class="bs-banner-title">
-            Insurance & Claims
+            貨件保價服務
           </div>
         </div>
       </div>
       <article class="bs-container bs-container--paddingV">
         <div class="main-title text-h6">
-          Parcel Insurance Policy
+          免費保價服務
         </div>
         <div class="scheme" v-cloak>
           <div class="scheme-section scheme-tabs">
             <bs-tabs v-cloak>
               <bs-tab :is-underLine="currentTab === 'Basic'" @click="currentTab = 'Basic'">
                 <div class="insurance-icon-basic scheme-tabs-icon"></div>
-                <div class="bs-tab-desc text-subtitle-sm">Basic</div>
+                <div class="bs-tab-desc text-subtitle-sm">免費保價服務</div>
               </bs-tab>
               <bs-tab :is-underLine="currentTab === 'Enhanced'" @click="currentTab = 'Enhanced'">
                 <div class="insurance-icon-advanced scheme-tabs-icon"></div>
-                <div class="bs-tab-desc text-subtitle-sm">Enhanced</div>
+                <div class="bs-tab-desc text-subtitle-sm">額外遺失保價服務</div>
               </bs-tab>
           </div>
           <article class="flip-list-item" v-show="currentTab === 'Basic'" key="Basic">
@@ -409,13 +409,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-coverage scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Free Parcel Insurance Coverage
+                    <div class="text-subtitle-sm scheme-info__title__text">免費保價服務
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>適合所有以 Buyandship 代運貨物的客戶，所有貨件均受保障</li>
+                    <li>每件貨件最高賠償 US$100（或按匯率的同等價格外幣）</li>
+                    <li>按每個貨件（每個 Tracking Number）獨立計算</li>
                   </ul>
                 </section>
               </a-col>
@@ -423,13 +423,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-lost scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Lost Parcel
+                    <div class="text-subtitle-sm scheme-info__title__text">遺失貨物
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>只限整件貨件遺失時才可索償</li>
+                    <li>貨件內部份產品違失不接受任何索償</li>
+                    <li>沒有準確申報、虛報、瞞報之貨件不接受任何索償</li>
                   </ul>
                 </section>
               </a-col>
@@ -437,13 +437,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-damaged scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Damaged Parcel
+                    <div class="text-subtitle-sm scheme-info__title__text">貨物破損
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>破損貨物不可正常使用，按破損比例賠償最多 30% 運費</li>
+                    <li>液體外漏不接受任何破損賠償</li>
+                    <li>易碎、容易破損及沒有合適保護之物品（如陶瓷、玻璃、液晶顯示屏、書籍、紙張、塑膠製品等）不接受任何破損賠償</li>
                   </ul>
                 </section>
               </a-col>
@@ -455,13 +455,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-coverage scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Free Parcel Insurance Coverage
+                    <div class="text-subtitle-sm scheme-info__title__text">3% 保價服務
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>額外遺失保障之費用為申報貨物價值之 3%</li>
+                    <li>每個貨件（每個Tracking Number）最大之費用為 NT$926</li>
+                    <li>費用會連同運費一同收取</li>
                   </ul>
                 </section>
               </a-col>
@@ -469,13 +469,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-lost scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Lost Parcel
+                    <div class="text-subtitle-sm scheme-info__title__text">遺失貨物
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>只限整件貨件遺失時才可索償</li>
+                    <li>貨件內部份產品違失不接受任何索償</li>
+                    <li>我們不會就沒有準確申報、虛報、瞞報而引致無法全數賠償之損失負責</li>
                   </ul>
                 </section>
               </a-col>
@@ -483,13 +483,13 @@
                 <section class="scheme-section scheme-info">
                   <div class="scheme-info__title">
                     <div class="insurance-icon-damaged scheme-info__title__icon"></div>
-                    <div class="text-subtitle-sm scheme-info__title__text">Damaged Parcel
+                    <div class="text-subtitle-sm scheme-info__title__text">貨物破損
                     </div>
                   </div>
                   <ul class="scheme-info__list">
-                    <li>Packages can be stored in our Hong Kong warehouse for 30 days for consolidation at your own will.</li>
-                    <li>Delivery Fee will be calculated based on the overall chargeable weight of the bulk</li>
-                    <li>Shipping time can only be adhered to if customers consolidate parcels immediately</li>
+                    <li>額外遺失保障不就貨件破損進行賠償</li>
+                    <li>在外包裝完好的情況下，不受理任何形式下的破損賠償</li>
+                    <li>外包裝盒變形、拆損、裂損，但不影響內部產品等情況下，不受理任何形式下破損賠償</li>
                   </ul>
                 </section>
               </a-col>
@@ -498,60 +498,60 @@
         </div>
         <section class="page-section page-section__title">
           <div class="text-h6">
-            Insurance Does NOT Cover
+            不承保範圍
           </div>
         </section>
         <section class="page-section">
           <div class="insurance-icon-parcels mb-0_5x page-section-icon"></div>
           <div class="text-subtitle-lg mb">
-            Condition of Parcels
+            包裹狀態
           </div>
           <div class="text-body-sm">
             <ul class="page-section-list">
-              <li>Dangerous goods and <b>prohibited articles</b> (click here for more details</li>
-              <li>Fragile goods and goods with improper packaging or lack of appropriate protection (such as ceramic glass, liquid crystal display, books, papers and Plastic Products) is not eligible for the insurance plan</li>
-              <li>Damage due to improper packaging or lack of appropriate protection for the parcel</li>
-              <li>Damage compensation is not applicable if the packaging is intact</li>
-              <li>Damage compensation is not applicable if the outer packaging is damaged without any actual damage to the product itself</li>
-              <li>For non-carton or wooden box packaging parcel, we will not accept any form of damagensurance DOES NOT Cover compensation</li>
+              <li>危險品及<b>違禁品</b> (按此了解更多）</li>
+              <li>易碎、容易破損及沒有合適保護之物品（如陶瓷、玻璃、液晶顯示屏、書籍、紙張、塑膠製品等）不接受任何破損賠償</li>
+              <li>貨物本身包裝不當，沒有對產品提供合適保護，不參與破損賠償</li>
+              <li>在外包裝完好的情況下，不受理任何形式下的破損賠償</li>
+              <li>外包裝盒變形、拆損、裂損，但不影響內部產品等情況下，不受理任何形式下破損賠償</li>
+              <li>對於非紙箱或木箱包裝貨物，不受理任何形式下破損賠償</li>
             </ul>
           </div>
         </section>
         <section class="page-section">
           <div class="insurance-icon-lost mb-0_5x page-section-icon"></div>
           <div class="text-subtitle-lg mb">
-            Lost Parcel
+            自然災害
           </div>
           <div class="text-body-sm">
             <ul class="page-section-list">
-              <li>Dangerous goods and <b>prohibited articles</b> (click here for more details</li>
-              <li>Fragile goods and goods with improper packaging or lack of appropriate protection (such as ceramic glass, liquid crystal display, books, papers and Plastic Products) is not eligible for the insurance plan</li>
-              <li>Damage due to improper packaging or lack of appropriate protection for the parcel</li>
-              <li>Damage compensation is not applicable if the packaging is intact</li>
-              <li>Damage compensation is not applicable if the outer packaging is damaged without any actual damage to the product itself</li>
-              <li>For non-carton or wooden box packaging parcel, we will not accept any form of damagensurance DOES NOT Cover compensation</li>
+              <li>自然損耗、本質缺陷、特性以及市價上升跌落等所引起</li>
+              <li>在運輸途中由於惡劣氣候、雷電、海嘯、地震、洪水自然災害等自然災害所造成</li>
+              <li>在運輸途中發生空難事故、公敵入侵、暴動、罷工或其它地區性爭執、民眾騷亂或戰爭帶來的危險</li>
+              <li>任何由於溫度、濕度變化而導致</li>
+              <li>undefined</li>
+              <li>undefined</li>
             </ul>
           </div>
         </section>
         <section class="page-section">
           <div class="insurance-icon-damaged mb-0_5x page-section-icon"></div>
           <div class="text-subtitle-lg mb">
-            Damaged Parcel
+            未能預見情況
           </div>
           <div class="text-body-sm">
             <ul class="page-section-list">
-              <li>Dangerous goods and <b>prohibited articles</b> (click here for more details</li>
-              <li>Fragile goods and goods with improper packaging or lack of appropriate protection (such as ceramic glass, liquid crystal display, books, papers and Plastic Products) is not eligible for the insurance plan</li>
-              <li>Damage due to improper packaging or lack of appropriate protection for the parcel</li>
-              <li>Damage compensation is not applicable if the packaging is intact</li>
-              <li>Damage compensation is not applicable if the outer packaging is damaged without any actual damage to the product itself</li>
-              <li>For non-carton or wooden box packaging parcel, we will not accept any form of damagensurance DOES NOT Cover compensation</li>
+              <li>任何海關、航空公司、機場或政府官員的疏忽行為，如海關退運，航班延誤等</li>
+              <li>沒有準確申報、虛報、瞞報或無法提供 Tracking Number 之貨物</li>
+              <li>提供錯誤的收貨標識、錯誤的預報信息，無入庫記錄或網站錯發等</li>
+              <li>懷疑虛假網站及無法聯絡賣方確認</li>
+              <li>沒有任何簽收或派送公司證明已派送到海外倉庫素</li>
+              <li>寄件人因錯失而造成貨件丟失或寄件人所提供的文件不實</li>
             </ul>
           </div>
         </section>
         <section class="page-section page-section__title">
           <div class="text-h6">
-            How to Claim
+            索償流程
           </div>
         </section>
         <a-row :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
@@ -559,16 +559,16 @@
             <section class="page-section">
               <div class="insurance-icon-secured mb-0_5x page-section-icon"></div>
               <div class="text-subtitle-lg mb">
-                Precautions for Receiving Parcel
+                貨物簽收注意事項
               </div>
               <div class="text-body-sm">
                 <ul class="page-section-list">
-                  <li>Dangerous goods and <b>prohibited articles</b> (click here for more details</li>
-                  <li>Fragile goods and goods with improper packaging or lack of appropriate protection (such as ceramic glass, liquid crystal display, books, papers and Plastic Products) is not eligible for the insurance plan</li>
-                  <li>Damage due to improper packaging or lack of appropriate protection for the parcel</li>
-                  <li>Damage compensation is not applicable if the packaging is intact</li>
-                  <li>Damage compensation is not applicable if the outer packaging is damaged without any actual damage to the product itself</li>
-                  <li>For non-carton or wooden box packaging parcel, we will not accept any form of damagensurance DOES NOT Cover compensation</li>
+                  <li>簽收前先檢查貨物外包裝是否完好，重量是否有明顯差別</li>
+                  <li>無論是否發現外包裝有明顯破損，簽收前都要在快遞員面前驗貨再進行簽收</li>
+                  <li>發現貨物破損後，請準備好購買憑證、外包裝、箱內包括、實物照片等信息，通知我們安排後續賠償工作</li>
+                  <li>貨物簽收需當快遞員面前簽收，如發現破損可以選擇即時拍照並拒絕收貨</li>
+                  <li>undefined</li>
+                  <li>undefined</li>
                 </ul>
               </div>
             </section>
@@ -577,16 +577,16 @@
             <section class="page-section">
               <div class="insurance-icon-lost mb-0_5x page-section-icon"></div>
               <div class="text-subtitle-lg mb">
-                Lost Parcel
+                遺失貨物
               </div>
               <div class="text-body-sm">
                 <ul class="page-section-list">
-                  <li>Dangerous goods and <b>prohibited articles</b> (click here for more details</li>
-                  <li>Fragile goods and goods with improper packaging or lack of appropriate protection (such as ceramic glass, liquid crystal display, books, papers and Plastic Products) is not eligible for the insurance plan</li>
-                  <li>Damage due to improper packaging or lack of appropriate protection for the parcel</li>
-                  <li>Damage compensation is not applicable if the packaging is intact</li>
-                  <li>Damage compensation is not applicable if the outer packaging is damaged without any actual damage to the product itself</li>
-                  <li>For non-carton or wooden box packaging parcel, we will not accept any form of damagensurance DOES NOT Cover compensation</li>
+                  <li>用戶請準備以下資料以便索償：商品購買憑證（需包括產品之數量及價值）、商家包裹發送郵件、破損的圖片（包裝內外及產品圖片）及賣家的聯絡方法</li>
+                  <li>以郵件的方式遞交所有資料發送郵件至 support@buyandship.com.tw，標題為「用戶姓名+運單編號+索償」。如缺少其中一項，或我們無法與賣家進行確認，我們將不會接受索償申請</li>
+                  <li>如我們無法與賣家進行確認，我們將不會接受索償申請</li>
+                  <li>用戶提供完整資料後，我們會於 7 個工作天內做出答覆</li>
+                  <li>用戶貨物簽收後 3 天之後，將不再接受任何索償申請</li>
+                  <li>貨物入轉運倉庫後超過 30 天沒有認領，並且客戶未提出索償的，不再參與索償</li>
                 </ul>
                 </ul>
               </div>
@@ -616,36 +616,36 @@
       <div class="bs-container">
         <a-row class="footer-nav" :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
           <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">Shop</div>
+            <div class="footer-nav-group-label">購物</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/blog-list">Discount</a>
+              <a href="/blog-list">發燒話題</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/blog-list">Lastest news</a>
+              <a href="/blog-list">最新消息</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">Ship</div>
+            <div class="footer-nav-group-label">代運</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+              <a href="/tutorial">使用教學</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/pricing">Pricing</a>
+              <a href="/pricing">運費計算</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/advantage">Advantages</a>
+              <a href="/advantage">我們的優勢</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
-            <div class="footer-nav-group-label">About</div>
+            <div class="footer-nav-group-label">關於</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/about-us">Buyandship Singapore Pte. Ltd</a>
+              <a href="/about-us">關於我們</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/warehouses">Warehouse Locations</a>
+              <a href="/warehouses">海外倉庫一覽</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/contact-us">Contact</a>
+              <a href="/contact-us">聯絡我們</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
@@ -672,7 +672,7 @@
               <div class="footer-location-icon">
                 <i class="bs-icon-environment" style="margin-left: -6px;"></i>
               </div>
-              <div class="footer-location-desc">Head office: RM706, 7/F., Join-in Hang Sing Centre, 2-16 Kwai Fung Crescent, Kwai Chung, NT.</div>
+              <div class="footer-location-desc">總公司：新界葵芳葵豐街2-16號鍾意恆勝中心7樓706室</div>
             </div>
             <div class="footer-download">
               <a class="footer-download-link" href="#">
@@ -696,21 +696,21 @@
           <div class="footer-country">
             <a class="footer-country-link" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
               <i class="bs-icon-country"></i>
-              <span>Singapore</span>
+              <span>台灣</span>
             </a>
           </div>
           <div class="footer-copyright">
             <span class="footer-copyright-desc"> © 2019 E-BUY Global Limited.</span>
-            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/terms">Terms of Use</a>
-            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/privacy">Privacy</a>
+            <a class="footer-copyright-link" href="/terms">使用條款</a>
+            <a class="footer-copyright-link" href="/privacy">隱私政策</a>
           </div>
         </div>
       </div>
     </footer>
 
   </div>
-  <script src="/buyandshipdemo/assets/js/common.js?24be74b3f89b346768d0"></script>
-  <script src="/buyandshipdemo/assets/js/insurance.js?24be74b3f89b346768d0"></script>
+  <script src="/buyandshipdemo/assets/js/common.js?02b96dc10fd0998eed5c"></script>
+  <script src="/buyandshipdemo/assets/js/insurance.js?02b96dc10fd0998eed5c"></script>
 </body>
 
 </html>

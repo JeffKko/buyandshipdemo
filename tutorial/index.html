@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>tutorial</title>
-  <link href="/buyandshipdemo/assets/css/common.css?24be74b3f89b346768d0" rel="stylesheet">
-  <link href="/buyandshipdemo/assets/css/tutorial.css?24be74b3f89b346768d0" rel="stylesheet">
+  <link href="/buyandshipdemo/assets/css/common.css?02b96dc10fd0998eed5c" rel="stylesheet">
+  <link href="/buyandshipdemo/assets/css/tutorial.css?02b96dc10fd0998eed5c" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       <div class="bs-icon-hamburger" @click="toggleMobileNav" v-show="!visible.mobileNav"></div>
       <div class="bs-icon-close" @click="toggleMobileNav" v-show="visible.mobileNav" style="display: none;"></div>
     </i>
-        <a class="header-logo" href="https://www.buyandship.com.tw/">
+        <a class="header-logo" href="/">
           <img class="header-logo-image" alt="logo" src="/buyandshipdemo/assets/img/company_logo_dark.png" srcset="
             /buyandshipdemo/assets/img/company_logo_dark.png 1x,
             /buyandshipdemo/assets/img/company_logo_dark@2x.png 2x,
@@ -36,7 +36,7 @@
           <div class="header-nav-item header-nav-item--more">
             <a class="header-country" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
               <div class="bs-icon-country"></div>
-              <span>Singapore</span>
+              <span>台灣</span>
             </a>
           </div>
         </nav>
@@ -45,20 +45,20 @@
       <div class="header-r">
         <nav class="header-nav">
           <div class="header-nav-item">
-            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+            <a class="header-nav-item-link" href="/tutorial">代運使用教學</a>
           </div>
           <div class="header-nav-item">
-            <a class="header-nav-item-link" href="https://www.buyandship.com.tw/pricing">Pricing</a>
+            <a class="header-nav-item-link" href="/pricing">運費計算</a>
           </div>
           <div class="header-nav-item header-nav-item--more">
             <a href="javascript:;" @click.prevent="toggleNavPanel('shopping')">
-              Shopping Tips
+              精選購物網站
               <i class="bs-icon-arrow-down"></i>
             </a>
           </div>
           <div class="header-nav-item header-nav-item--more">
             <a href="javascript:;" @click.prevent="toggleNavPanel('faq')">
-              FAQ
+              常見問題
               <i class="bs-icon-arrow-down"></i>
             </a>
           </div>
@@ -67,32 +67,32 @@
         <div bs-logout class="header-r-member">
           <a class="header-member" href="https://www.buyandship.com.tw/login/">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">Log&nbsp;in</span>
+            <span class="header-member-icon-desc text-subtitle-sm">登入</span>
           </a>
           <!-- <div class="header-member-sign-sm text-subtitle-sm" @click="signup">Sign&nbsp;up</div> -->
           <button class="bs-button header-member-sign text-subtitle-sm bs-button--primary bs-button--md" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
-            SIGN&nbsp;UP
+            註冊
           </button>
         </div>
 
         <div bs-login class="header-r-member">
           <a class="header-member header-member--m" href="https://www.buyandship.com.tw/account">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">Hi, Christ Shui</span>
+            <span class="header-member-icon-desc text-subtitle-sm">你好，Christ Shui</span>
           </a>
           <a class="header-member header-member--pc" href="https://www.buyandship.com.tw/account">
             <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">My Account</span>
+            <span class="header-member-icon-desc text-subtitle-sm">我的帳戶</span>
           </a>
           <aside class="header-account">
             <div class="header-account-overlay"></div>
             <ul class="header-account-list">
-              <li class="header-account-list-item"><a href="">My Account</a></li>
-              <li class="header-account-list-item"><a href="">My Profile</a></li>
-              <li class="header-account-list-item"><a href="">Overseas Warehouses</a></li>
-              <li class="header-account-list-item"><a href="">My Shipments</a></li>
-              <li class="header-account-list-item"><a href="">My Orders</a></li>
-              <li class="header-account-list-item"><a href="">Log out</a></li>
+              <li class="header-account-list-item"><a href="">我的帳戶</a></li>
+              <li class="header-account-list-item"><a href="">個人資料</a></li>
+              <li class="header-account-list-item"><a href="">海外倉庫</a></li>
+              <li class="header-account-list-item"><a href="">我的貨物</a></li>
+              <li class="header-account-list-item"><a href="">我的轉運單</a></li>
+              <li class="header-account-list-item"><a href="">登出</a></li>
             </ul>
           </aside>
         </div>
@@ -100,81 +100,81 @@
     </header>
 
     <bs-nav-panel v-model="isShowNav.shopping" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Discounts</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Latest news</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/shopping">Features Shopping Site</a>
+      <a class="text-h4" href="/shopping">發燒話題</a>
+      <a class="text-h4" href="/shopping">最新消息</a>
+      <a class="text-h4" href="/shopping">精選購物網站</a>
     </bs-nav-panel>
     <bs-nav-panel v-model="isShowNav.faq" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="https://www.buyandship.com.tw/faq">FAQ</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/warehouses">Our Warehouses</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/restrictions">Prohebit Items</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/contact-us">Contact Us</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/advantage">Advantage</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/insurance">Insurance</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/terms">Terms</a>
-      <a class="text-h4" href="https://www.buyandship.com.tw/privacy">Privacy and Policy</a>
+      <a class="text-h4" href="/faq">常見問題</a>
+      <a class="text-h4" href="/warehouses">海外倉庫一覽</a>
+      <a class="text-h4" href="/restrictions">禁運物品目錄</a>
+      <a class="text-h4" href="/contact-us">聯絡我們</a>
+      <a class="text-h4" href="/advantage">我們的優勢</a>
+      <a class="text-h4" href="/insurance">貨物保價服務</a>
+      <a class="text-h4" href="/terms">使用條款</a>
+      <a class="text-h4" href="/privacy">隱私政策</a>
     </bs-nav-panel>
     <bs-nav-panel v-model="isShowNav.country" @on-hide="currentNav = ''" v-cloak>
-      <div class="country-title text-h6">Select country</div>
+      <div class="country-title text-h6">請選擇國家或地區</div>
       <a-row>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.tw/">
             <span class="icon-flag-tw"></span>
-            <span class="ml">Taiwan</span>
+            <span class="ml">台灣</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://mo.buynship.com/">
             <span class="icon-flag-mo"></span>
-            <span class="ml">Macau</span>
+            <span class="ml">澳門</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.today/">
             <span class="icon-flag-hk"></span>
-            <span class="ml">Hong Kong</span>
+            <span class="ml">香港</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.cn/">
             <span class="icon-flag-cn"></span>
-            <span class="ml">China</span>
+            <span class="ml">中國</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.co.jp/">
             <span class="icon-flag-jp"></span>
-            <span class="ml">Japan</span>
+            <span class="ml">日本</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://au.buynship.com/">
             <span class="icon-flag-au"></span>
-            <span class="ml">Australia</span>
+            <span class="ml">澳洲</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.sg/">
             <span class="icon-flag-sg"></span>
-            <span class="ml">Singapore</span>
+            <span class="ml">新加坡</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.my/">
             <span class="icon-flag-my"></span>
-            <span class="ml">Malaysia</span>
+            <span class="ml">馬來西亞</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://www.buyandship.in/">
             <span class="icon-flag-in"></span>
-            <span class="ml">India</span>
+            <span class="ml">印度</span>
           </a>
         </a-col>
         <a-col class="country-card" :xs="12" :md="12" :xl="12">
           <a class="country-item text-subtitle-sm" href="https://ae.buynship.com/">
             <span class="icon-flag-ea"></span>
-            <span class="ml">UAE</span>
+            <span class="ml">阿聯酋</span>
           </a>
         </a-col>
       </a-row>
@@ -205,36 +205,36 @@
         <nav class="slinky-menu slinky-theme-default">
           <ul>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Account</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">我的帳戶</span></a>
             </li>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Overseas Warehouses</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">海外倉庫</span></a>
             </li>
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Shipments</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">我的貨物</span></a>
             </li>
             <li bs-login>
-              <a class="slinky-menu__underline" href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">My Orders</span></a>
+              <a class="slinky-menu__underline" href="/tutorial"><span
+                  class="text-subtitle-sm">我的轉運單</span></a>
             </li>
             <li>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Tutorial</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">代運使用教學</span></a>
             </li>
             <li>
-              <a href="https://www.buyandship.com.tw/pricing"><span
-                  class="text-subtitle-sm">Pricing</span></a>
+              <a href="/pricing"><span
+                  class="text-subtitle-sm">運費計算</span></a>
             <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">Shopping Tips</span></a>
+              <a href="#" class="next"><span class="text-subtitle-sm">精選購物網站</span></a>
               <ul>
                 <li>
-                  <a href="https://www.buyandship.com.tw/shopping"><span>Shopping</span></a>
+                  <a href="/shopping"><span>購物</span></a>
                 <li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/restrictions"><span>Restrictions</span></a>
+                  <a href="/restrictions"><span>貨物限制</span></a>
                 </li>
                 <!-- <li>
                   <a href="#" class="next"><span>Led Zeppelin</span></a>
@@ -256,87 +256,87 @@
             </li>
             <li>
               <a href="#" class="next slinky-menu__underline">
-                <span class="text-subtitle-sm">FAQ</span>
+                <span class="text-subtitle-sm">常見問題</span>
               </a>
               <ul>
                 <li>
-                  <a href="https://www.buyandship.com.tw/faq"><span>FAQ</span></a>
+                  <a href="/faq"><span>常見問題</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/warehouses"><span>Our Warehouses</span></a>
+                  <a href="/warehouses"><span>海外倉庫一覽</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/contact-us"><span>Contact Us</span></a>
+                  <a href="/contact-us"><span>聯絡我們</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/terms"><span>Terms</span></a>
+                  <a href="/terms"><span>使用條款</span></a>
                 </li>
                 <li>
-                  <a href="https://www.buyandship.com.tw/privacy"><span>Privacy and Policy</span></a>
+                  <a href="/privacy"><span>隱私政策</span></a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">Country & Region</span></a>
+              <a href="#" class="next"><span class="text-subtitle-sm">國家及地區</span></a>
               <ul>
                 <li>
                   <a href="https://www.buyandship.com.tw/">
                     <i class="slinky-link__icon icon-flag-tw-md"></i>
-                    <span class="slinky-link__desc ml">Taiwan</span>
+                    <span class="slinky-link__desc ml">台灣</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://mo.buynship.com/">
                     <i class="slinky-link__icon icon-flag-mo-md"></i>
-                    <span class="slinky-link__desc ml">Macau</span>
+                    <span class="slinky-link__desc ml">澳門</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.today/">
                     <i class="slinky-link__icon icon-flag-hk-md"></i>
-                    <span class="slinky-link__desc ml">Hong Kong</span>
+                    <span class="slinky-link__desc ml">香港</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.cn/">
                     <i class="slinky-link__icon icon-flag-cn-md"></i>
-                    <span class="slinky-link__desc ml">China</span>
+                    <span class="slinky-link__desc ml">中國</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.co.jp/">
                     <i class="slinky-link__icon icon-flag-jp-md"></i>
-                    <span class="slinky-link__desc ml">Japan</span>
+                    <span class="slinky-link__desc ml">日本</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://au.buynship.com/">
                     <i class="slinky-link__icon icon-flag-au-md"></i>
-                    <span class="slinky-link__desc ml">Australia</span>
+                    <span class="slinky-link__desc ml">澳洲</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.com.sg/">
                     <i class="slinky-link__icon icon-flag-sg-md"></i>
-                    <span class="slinky-link__desc ml">Singapore</span>
+                    <span class="slinky-link__desc ml">新加坡</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.com.my/">
                     <i class="slinky-link__icon icon-flag-my-md"></i>
-                    <span class="slinky-link__desc ml">Malaysia</span>
+                    <span class="slinky-link__desc ml">馬來西亞</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://www.buyandship.in/">
                     <i class="slinky-link__icon icon-flag-in-md"></i>
-                    <span class="slinky-link__desc ml">India</span>
+                    <span class="slinky-link__desc ml">印度</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://ae.buynship.com/">
                     <i class="slinky-link__icon icon-flag-ea-md"></i>
-                    <span class="slinky-link__desc ml">UAE</span>
+                    <span class="slinky-link__desc ml">阿聯酋</span>
                   </a>
                 </li>
               </ul>
@@ -356,8 +356,8 @@
               </ul>
             </li> -->
             <li bs-login>
-              <a href="https://www.buyandship.com.tw/tutorial"><span
-                  class="text-subtitle-sm">Log out</span></a>
+              <a href="/tutorial"><span
+                  class="text-subtitle-sm">登出</span></a>
             </li>
           </ul>
         </nav>
@@ -389,20 +389,20 @@
       <div class="bs-banner">
         <div class="bs-container">
           <div class="bs-banner-title">
-            A guide for how to use Buyandship
+            如何使用 Buyandship 國際網購代運
           </div>
           <div class="bs-banner-subtitle">
-            See how easy it is to shop online at your favorite retailers and ship internationally with Buyandship.
+            觀看簡單的使用流程，與 Buyandship 國際網購代運一起盡情享受網購樂趣
           </div>
           <div class="bs-banner-link text-subtitle-sm">
             <a href="#" @click.prevent="openVideo('https://www.youtube.com/watch?v=Tj7346AVTqc&feature=emb_title')">
-              WATCH VIDEO</a>
+              觀看教學影片</a>
           </div>
         </div>
       </div>
       <article class="bs-container bs-container--paddingV">
         <section class="section section--progress">
-          <div class="progress-title text-h5 js-content-anchor" data-title="How to use ?" data-subtitle="">How to use ?</div>
+          <div class="progress-title text-h5 js-content-anchor" data-title="如何使用 ?" data-subtitle="">如何使用 ?</div>
           <div class="progress-step-container">
             <div class="progress-step progress-step--1">
               <div class="progress-step-media">
@@ -417,14 +417,14 @@
                 <div class="progress-step-bar-line"></div>
               </div>
               <div class="progress-step-content">
-                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Get your overseas addresses">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="如何使用 ?" data-subtitle="取得你的海外倉庫地址">
                   <span><i class="bs-icon-overseas-house"></i></span>
-                  <span class="step-title">Get your overseas addresses</span>
+                  <span class="step-title">取得你的海外倉庫地址</span>
                 </div>
-                <div class="progress-step-content-desc">Register with us to get your very own overseas addresses. Use them as your delivery addresses when shopping from worldwide online stores.</div>
+                <div class="progress-step-content-desc">立即註冊取得你的專屬海外倉庫地址，並網購時填寫在送貨地址上（記得TW會員編號）</div>
                 <div class="progress-step-action">
                   <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
-                    GET IT NOW
+                    馬上領取
                   </button>
                 </div>
               </div>
@@ -442,14 +442,14 @@
                 <div class="progress-step-bar-line"></div>
               </div>
               <div class="progress-step-content">
-                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Start Shopping Online!">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="如何使用 ?" data-subtitle="開始盡情網購">
                   <span><i class="bs-icon-shop-bag"></i></span>
-                  <span class="step-title">Start Shopping Online!</span>
+                  <span class="step-title">開始盡情網購</span>
                 </div>
-                <div class="progress-step-content-desc">Buy from your favorite online stores worldwide and send your purchases to your new overseas address.</div>
+                <div class="progress-step-content-desc">開始盡情在海外網購，送貨地址填寫我們海外倉庫地址（記得TW會員編號），讓我們為您簽收戰利品吧！</div>
                 <div class="progress-step-action">
                   <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('/shopping')">
-                    EXPLORE SHOPPING SITES
+                    全球剁手指
                   </button>
                 </div>
               </div>
@@ -467,14 +467,14 @@
                 <div class="progress-step-bar-line"></div>
               </div>
               <div class="progress-step-content">
-                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Declare your parcel">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="如何使用 ?" data-subtitle="乖乖來申報">
                   <span><i class="bs-icon-declare-done"></i></span>
-                  <span class="step-title">Declare your parcel</span>
+                  <span class="step-title">乖乖來申報</span>
                 </div>
-                <div class="progress-step-content-desc">As soon as you’ve received the Tracking Number and Shipping Courier details from the seller, you candeclare your parcel on our website or APP. Click here to add a new Shipment” at our membership centre</div>
+                <div class="progress-step-content-desc">賣家寄出貨品，以貨物追蹤編號（Tracking number）在網站或應用程式中申報貨物資訊，按此到會員中心新增貨物並進行申報。</div>
                 <div class="progress-step-action">
                   <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
-                    ADD A NEW SHIPMENT
+                    新增貨品
                   </button>
                 </div>
               </div>
@@ -492,14 +492,14 @@
                 <div class="progress-step-bar-line"></div>
               </div>
               <div class="progress-step-content">
-                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Consolidation & Payment">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="如何使用 ?" data-subtitle="合併貨品及付款">
                   <span><i class="bs-icon-consolidate"></i></span>
-                  <span class="step-title">Consolidation & Payment</span>
+                  <span class="step-title">合併貨品及付款</span>
                 </div>
-                <div class="progress-step-content-desc">When your parcel is delivered at our Hong Kong warehouse, payment is easy! You have options to pay by Buyandship Points / Credit Card Payment. We also offer consolidation service by combining multiple orders into one box to save you on the international shipping fee</div>
+                <div class="progress-step-content-desc">貨品抵達香港倉庫，可以 Buyandship 國際網購代運積分或信用卡（海外交易）支付運費，快速又方便。從不同國家網購的產品都能合併成單一貨物運送，為你節省國際空運費用。</div>
                 <div class="progress-step-action">
                   <button class="bs-button bs-button--primary bs-button--outline full-width" @click="$gobalFunction.redirect('/pricing')">
-                    Calculate Delivery Fee
+                    全球剁手指
                   </button class="step-title">
                 </div>
               </div>
@@ -516,18 +516,18 @@
                 <div class="progress-step-bar-dot"></div>
               </div>
               <div class="progress-step-content">
-                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="How to use ?" data-subtitle="Your box is delivered to you">
+                <div class="progress-step-content-title text-h6 js-content-anchor" data-title="如何使用 ?" data-subtitle="翹腳等收貨">
                   <span><i class="bs-icon-order-done"></i></span>
-                  <span class="step-title">Your box is delivered to you</span>
+                  <span class="step-title">翹腳等收貨</span>
                 </div>
-                <div class="progress-step-content-desc">Your parcel will be at your doorstep as quickly as 3 business days. Our online tracking gives you status updates as your shipment speeds through our website and APP. <br /><br /> Repeat these steps as many times as you like. We love getting packages just as much as you do.</div>
-                </div>
+                <div class="progress-step-content-desc">最快只需 3 天，你的貨物就能宅配到家。 你可以透過 Buyandship 國際網購代運網站或應用程式緊貼追蹤貨物的最新運送狀態。</div>
               </div>
             </div>
+          </div>
         </section>
         <section class="section section--pricing">
-          <div class="pricing-title text-h5 js-content-anchor" data-title="Cut Off / Shipping Time" data-subtitle="">
-            Cut Off / Shipping Time
+          <div class="pricing-title text-h5 js-content-anchor" data-title="截單及空運時間" data-subtitle="">
+            截單及空運時間
             <div class="pricing-title-deco"></div>
           </div>
           <div class="scheme">
@@ -556,8 +556,8 @@
                 </section> -->
                     <section class="scheme-section scheme-parcel-info">
                       <ul>
-                        <li>5 times a week</li>
-                        <li>Every Tuesday to Saturday HK</li>
+                        <li>每週 5 次</li>
+                        <li>香港時間逢星期二至星期六</li>
                       </ul>
                     </section>
                   </div>
@@ -576,8 +576,8 @@
                     </section>
                     <section class="scheme-section scheme-parcel-info">
                       <ul>
-                        <li>5 times a week</li>
-                        <li>Every Tuesday to Saturday HK</li>
+                        <li>每週 5 次</li>
+                        <li>香港時間逢星期二至星期六</li>
                       </ul>
                     </section>
                   </div>
@@ -596,8 +596,8 @@
                     </section>
                     <section class="scheme-section scheme-parcel-info">
                       <ul>
-                        <li>5 times a week</li>
-                        <li>Every Tuesday to Saturday HK</li>
+                        <li>每週 5 次</li>
+                        <li>香港時間逢星期二至星期六</li>
                       </ul>
                     </section>
                   </div>
@@ -608,15 +608,15 @@
                 <label for="scheme-info-field--Europe" class="scheme-info-straw">
                   <span class="icon-info"></span>
                   <span
-                class="text-subtitle-sm scheme-info-field-title">More infomation</span>
+                class="text-subtitle-sm scheme-info-field-title">更多資訊</span>
                   <span class="icon-pricing-arrow-down"></span>
                 </label>
                 <div class="scheme-info-centent">
                   <ul class="scheme-info-centent-list">
-                    <li>Customers can purchase products from multiple global online stores and have them conveniently delivered in one parcel.</li>
-                    <li>Packages arriving from our overseas warehouses will be checked out as soon as possible</li>
-                    <li>When the delivery status of the package has changed to “Check Out”, it means that the package has been arranged for delivery to our HK warehouse</li>
-                    <li>Arrival time will be postponed by global public holidays</li>
+                    <li>會員可從不同國家的網站購物，然後把所有貨物合併為單一運單，</li>
+                    <li>貨物入庫後會盡快安排出庫，請耐心等候</li>
+                    <li>當貨物狀態更改為「出庫」，意指該貨物已被安排送港</li>
+                    <li>如遇上發貨國家或香港法定假日，到達時間將會順延</li>
                   </ul>
                 </div>
               </section>
@@ -625,32 +625,32 @@
         </section>
         <section class="section section--faq">
           <div class="bs-container">
-            <div class="faq-title text-h5 js-content-anchor" data-title="Top questions from our customers" data-subtitle="">
+            <div class="faq-title text-h5 js-content-anchor" data-title="常見問題" data-subtitle="">
               <div>
-                Top questions from our customers
+                常見問題
               </div>
               <div class="faq-title-deco"></div>
             </div>
             <div class="contact-second">
               <div class="contact-second-item">
                 <i class="bs-icon-query"></i>
-                <div class="text-h6">General Enquiries</div>
+                <div class="text-h6">一般查詢</div>
                 <div class="contact-second-item-link">
-                  <a href="#">How to calculate the delivery fee</a>
+                  <a href="#">如果計算運費</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a>What should I insert for “delivery address”</a>
+                  <a>我要如何輸入「送貨地址」</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a>I cannot find a tracking number</a>
+                  <a>我找不到「貨物追蹤編號（Tracking number）」</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a class="contact-second-item-link-arrow text-subtitle-sm">MORE</a>
+                  <a class="contact-second-item-link-arrow text-subtitle-sm">更多</a>
                 </div>
               </div>
               <div class="contact-second-item">
                 <i class="bs-icon-parcel"></i>
-                <div class="text-h6">Shipments Enquiries</div>
+                <div class="text-h6">貨物查詢</div>
                 <div class="contact-second-item-link">
                   <a href="">What is the shipment schedule</a>
                 </div>
@@ -661,7 +661,7 @@
                   <a href="">Shipment query 3</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">更多</a>
                 </div>
               </div>
               <div class="contact-second-item">
@@ -677,7 +677,7 @@
                   <a href="">Order query 3</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">更多</a>
                 </div>
               </div>
               <div class="contact-second-item">
@@ -693,7 +693,7 @@
                   <a href="">Lost or Damaged query 3</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">更多</a>
                 </div>
               </div>
               <div class="contact-second-item">
@@ -709,7 +709,7 @@
                   <a href="">More query 3</a>
                 </div>
                 <div class="contact-second-item-link">
-                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">MORE</a>
+                  <a class="contact-second-item-link-arrow text-subtitle-sm" href="">更多</a>
                 </div>
               </div>
             </div>
@@ -746,36 +746,36 @@
       <div class="bs-container">
         <a-row class="footer-nav" :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
           <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">Shop</div>
+            <div class="footer-nav-group-label">購物</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/blog-list">Discount</a>
+              <a href="/blog-list">發燒話題</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/blog-list">Lastest news</a>
+              <a href="/blog-list">最新消息</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">Ship</div>
+            <div class="footer-nav-group-label">代運</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/tutorial">Tutorial</a>
+              <a href="/tutorial">使用教學</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/pricing">Pricing</a>
+              <a href="/pricing">運費計算</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/advantage">Advantages</a>
+              <a href="/advantage">我們的優勢</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
-            <div class="footer-nav-group-label">About</div>
+            <div class="footer-nav-group-label">關於</div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/about-us">Buyandship Singapore Pte. Ltd</a>
+              <a href="/about-us">關於我們</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/warehouses">Warehouse Locations</a>
+              <a href="/warehouses">海外倉庫一覽</a>
             </div>
             <div class="footer-nav-group-item">
-              <a href="https://www.buyandship.com.tw/contact-us">Contact</a>
+              <a href="/contact-us">聯絡我們</a>
             </div>
           </a-col>
           <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
@@ -802,7 +802,7 @@
               <div class="footer-location-icon">
                 <i class="bs-icon-environment" style="margin-left: -6px;"></i>
               </div>
-              <div class="footer-location-desc">Head office: RM706, 7/F., Join-in Hang Sing Centre, 2-16 Kwai Fung Crescent, Kwai Chung, NT.</div>
+              <div class="footer-location-desc">總公司：新界葵芳葵豐街2-16號鍾意恆勝中心7樓706室</div>
             </div>
             <div class="footer-download">
               <a class="footer-download-link" href="#">
@@ -826,21 +826,21 @@
           <div class="footer-country">
             <a class="footer-country-link" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
               <i class="bs-icon-country"></i>
-              <span>Singapore</span>
+              <span>台灣</span>
             </a>
           </div>
           <div class="footer-copyright">
             <span class="footer-copyright-desc"> © 2019 E-BUY Global Limited.</span>
-            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/terms">Terms of Use</a>
-            <a class="footer-copyright-link" href="https://www.buyandship.com.tw/privacy">Privacy</a>
+            <a class="footer-copyright-link" href="/terms">使用條款</a>
+            <a class="footer-copyright-link" href="/privacy">隱私政策</a>
           </div>
         </div>
       </div>
     </footer>
 
   </div>
-  <script src="/buyandshipdemo/assets/js/common.js?24be74b3f89b346768d0"></script>
-  <script src="/buyandshipdemo/assets/js/tutorial.js?24be74b3f89b346768d0"></script>
+  <script src="/buyandshipdemo/assets/js/common.js?02b96dc10fd0998eed5c"></script>
+  <script src="/buyandshipdemo/assets/js/tutorial.js?02b96dc10fd0998eed5c"></script>
 </body>
 
 </html>

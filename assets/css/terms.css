@@ -1,1 +1,98 @@
-.pointer{cursor:pointer}.bs-banner{height:202px;background-color:rgba(93,162,213,.21);position:relative}@media (min-width:1200px){.bs-banner{height:384px}}.bs-banner .bs-container{height:100%;background-image:url(/buyandshipdemo/assets/img/banner/terms_policy.png);background-repeat:no-repeat;background-position:calc(100% - 16px) bottom;background-size:auto 140px}@media (min-width:768px){.bs-banner .bs-container{background-image:url(/buyandshipdemo/assets/img/banner/terms_policy@2x.png);background-position:85% bottom}}@media (min-width:1200px){.bs-banner .bs-container{background-image:url(/buyandshipdemo/assets/img/banner/terms_policy@3x.png);background-size:auto 260px}}.bs-banner-title{position:relative;max-width:128px;top:16px;font-size:16px;font-weight:600;color:#262626}@media (min-width:768px){.bs-banner-title{max-width:300px;top:24px;font-size:24px;font-weight:400}}@media (min-width:1200px){.bs-banner-title{max-width:540px;top:94px;font-size:34px;font-weight:400}}.page-section-content{color:#262626}@media (min-width:1200px){.text-h6{font-size:34px;font-weight:400}}.page-section+.page-section{margin-top:48px}@media (min-width:1200px){.page-section+.page-section{margin-top:40px}}.bs-sticky-breadcrumb{display:-webkit-box;display:-ms-flexbox;display:flex}.bs-sticky-breadcrumb .bs-icon{margin:3px 10px 0}.bs-sticky-breadcrumb-item{display:block;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55vw}.text-subtitle-lg{color:#262626}@media (min-width:1200px){.text-subtitle-lg{font-size:20px}}
+.pointer {
+  cursor: pointer;
+}
+.bs-banner {
+  height: 202px;
+  background-color: rgba(93, 162, 213, 0.21);
+  position: relative;
+}
+@media (min-width: 1200px) {
+  .bs-banner {
+    height: 384px;
+  }
+}
+.bs-banner .bs-container {
+  height: 100%;
+  background-image: url(/buyandshipdemo/assets/img/banner/terms_policy.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) bottom;
+  background-size: auto 140px;
+}
+@media (min-width: 768px) {
+  .bs-banner .bs-container {
+    background-image: url(/buyandshipdemo/assets/img/banner/terms_policy@2x.png);
+    background-position: 85% bottom;
+  }
+}
+@media (min-width: 1200px) {
+  .bs-banner .bs-container {
+    background-image: url(/buyandshipdemo/assets/img/banner/terms_policy@3x.png);
+    background-size: auto 260px;
+  }
+}
+.bs-banner-title {
+  position: relative;
+  max-width: 128px;
+  top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+@media (min-width: 768px) {
+  .bs-banner-title {
+    max-width: 300px;
+    top: 24px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+}
+@media (min-width: 1200px) {
+  .bs-banner-title {
+    max-width: 540px;
+    top: 94px;
+    font-size: 34px;
+    font-weight: normal;
+  }
+}
+.page-section-content {
+  color: #262626;
+}
+@media (min-width: 1200px) {
+  .text-h6 {
+    font-size: 34px;
+    font-weight: normal;
+  }
+}
+.page-section + .page-section {
+  margin-top: 48px;
+}
+@media (min-width: 1200px) {
+  .page-section + .page-section {
+    margin-top: 40px;
+  }
+}
+.bs-sticky-breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bs-sticky-breadcrumb .bs-icon {
+  margin: 3px 10px 0 10px;
+}
+.bs-sticky-breadcrumb-item {
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 55vw;
+}
+.text-subtitle-lg {
+  color: #262626;
+}
+@media (min-width: 1200px) {
+  .text-subtitle-lg {
+    font-size: 20px;
+  }
+}
+
