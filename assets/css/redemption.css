@@ -35,7 +35,7 @@
 }
 @media (min-width: 768px) {
 .bs-google-map .gm-style-iw.gm-style-iw-c {
-    max-width: unset !important;
+    max-width: auto !important;
 }
 }
 .bs-google-map .gm-style .gm-style-iw-t::after {
@@ -50,7 +50,7 @@
 }
 @media (min-width: 768px) {
 .bs-google-map .gm-style-iw-d {
-    max-width: unset !important;
+    max-width: auto !important;
 }
 }
 .bs-google-map__window {
@@ -215,6 +215,17 @@
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
+.bs-slideshow-scroll-inner:after {
+  content: '';
+  width: 16px;
+  height: 100%;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+.bs-slideshow-scroll-inner:after {
+    content: none;
+}
+}
 .bs-slideshow-item {
   min-width: 160px;
   width: 160px;
@@ -230,6 +241,7 @@
 }
 @media (min-width: 768px) {
 .bs-slideshow-item {
+    min-width: auto;
     height: 300px;
     margin: 0 12px;
 }
@@ -255,6 +267,9 @@
   line-height: 40px;
   background-color: #FFFFFF;
   border-radius: inherit;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (min-width: 768px) {
 .bs-slideshow-item-info {
@@ -292,11 +307,11 @@
   .bs-banner__title {
     top: 69px;
     left: 144px;
-    right: unset;
+    right: auto;
     font-size: 34px;
     letter-spacing: 0.25px;
     line-height: 46px;
-    text-align: unset;
+    text-align: left;
   }
 }
 .bs-banner__subtitle {
@@ -317,7 +332,7 @@
   .bs-banner__subtitle {
     top: 117px;
     left: 144px;
-    right: unset;
+    right: auto;
     width: 326px;
     font-size: 14px;
     font-weight: 600;
@@ -327,7 +342,7 @@
   }
 }
 .bs-banner__background {
-  background-image: url(/buyandshipdemo/assets/img/banner/redemption_centre.png);
+  background-image: url(/assets/img/banner/redemption_centre.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -339,13 +354,13 @@
 }
 @media (min-width: 768px) {
   .bs-banner__background {
-    background-image: url(/buyandshipdemo/assets/img/banner/redemption_centre@2x.png);
+    background-image: url(/assets/img/banner/redemption_centre@2x.png);
   }
 }
 @media (min-width: 1200px) {
   .bs-banner__background {
     background-position: top;
-    background-image: url(/buyandshipdemo/assets/img/banner/redemption_centre@3x.png);
+    background-image: url(/assets/img/banner/redemption_centre@3x.png);
     left: 490px;
     right: 0;
     top: 0;
@@ -423,7 +438,7 @@
 }
 .bs-redemption__information__card__image {
   height: 248px;
-  background-image: url(/buyandshipdemo/assets/img/redemption/Daan_outdoor_2_700*525.jpg);
+  background-image: url(/assets/img/redemption/Daan_outdoor_2_700x525.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -431,7 +446,7 @@
 @media (min-width: 1200px) {
   .bs-redemption__information__card__image {
     width: 296px;
-    height: unset;
+    height: auto;
     min-height: 247px;
   }
 }
@@ -470,7 +485,7 @@
 }
 @media (min-width: 1200px) {
   .bs-redemption__information__card__shop__position {
-    width: unset;
+    width: auto;
     margin-bottom: 0;
   }
 }
@@ -484,7 +499,7 @@
 }
 @media (min-width: 1200px) {
   .bs-redemption__information__card__shop__open {
-    width: unset;
+    width: auto;
     margin-bottom: 24px;
   }
 }

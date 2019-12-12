@@ -43,7 +43,8 @@
   max-width: 100%;
   height: 100%;
   white-space: nowrap;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   text-align: center;
   padding-left: 14px;
   padding-right: 14px;
@@ -187,10 +188,6 @@
 .bs-tab-inner:after {
     content: none;
 }
-.bs-tab-desc {
-    height: unset;
-    line-height: unset;
-}
 .bs-tab-icon {
     display: inline-block;
     width: 24px;
@@ -201,7 +198,7 @@
     height: 100%;
 }
 .bs-tab.bs-tab--fix {
-    width: unset;
+    width: auto;
 }
 }
 @media (min-width: 1200px) {
@@ -354,7 +351,7 @@
 }
 .bs-banner .bs-container {
   height: 100%;
-  background-image: url(/buyandshipdemo/assets/img/banner/insurance.png);
+  background-image: url(/assets/img/banner/insurance.png);
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: auto 130px;
@@ -362,14 +359,14 @@
 }
 @media (min-width: 768px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/insurance@2x.png);
+    background-image: url(/assets/img/banner/insurance@2x.png);
     background-size: auto 130px;
     background-position: center bottom;
   }
 }
 @media (min-width: 1200px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/insurance@3x.png);
+    background-image: url(/assets/img/banner/insurance@3x.png);
     background-size: auto 346px;
     background-position: 100% bottom;
   }
@@ -399,12 +396,12 @@
   .bs-banner-title {
     max-width: 400px;
     top: 74px;
-    right: unset;
-    margin-left: unset;
-    margin-right: unset;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 34px;
     font-weight: normal;
-    text-align: unset;
+    text-align: left;
   }
 }
 .main-title {
@@ -437,7 +434,7 @@
 }
 @media (min-width: 768px) {
   .scheme-tabs {
-    max-width: unset;
+    max-width: auto;
     text-align: center;
     position: relative;
     top: -45px;
@@ -458,8 +455,8 @@
 }
 @media (min-width: 768px) {
   .scheme-info {
-    -webkit-box-shadow: unset;
-            box-shadow: unset;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     padding: 0;
   }
 }

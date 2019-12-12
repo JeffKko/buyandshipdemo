@@ -13,20 +13,20 @@
 }
 .bs-banner .bs-container {
   height: 100%;
-  background-image: url(/buyandshipdemo/assets/img/banner/terms_policy.png);
+  background-image: url(/assets/img/banner/terms_policy.png);
   background-repeat: no-repeat;
   background-position: calc(100% - 16px) bottom;
   background-size: auto 140px;
 }
 @media (min-width: 768px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/terms_policy@2x.png);
+    background-image: url(/assets/img/banner/terms_policy@2x.png);
     background-position: 85% bottom;
   }
 }
 @media (min-width: 1200px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/terms_policy@3x.png);
+    background-image: url(/assets/img/banner/terms_policy@3x.png);
     background-size: auto 260px;
   }
 }

@@ -6,342 +6,316 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>blog detail</title>
-  <link href="/buyandshipdemo/assets/css/common.css?02b96dc10fd0998eed5c" rel="stylesheet">
-  <link href="/buyandshipdemo/assets/css/blog-detail.css?02b96dc10fd0998eed5c" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/common.css?05c77b82e57369e71167">
 </head>
 
 <body>
 
-  <div id="app" class="layout">
+  <div class="layout">
 
-    <header class="bs-header">
-      <div class="header-l">
-        <i class="header-bars bs-icon">
+    <div id="bsHeader">
+
+      <header class="bs-header">
+  <div class="header-l">
+    <i class="header-bars bs-icon">
       <div class="bs-icon-hamburger" @click="toggleMobileNav" v-show="!visible.mobileNav"></div>
       <div class="bs-icon-close" @click="toggleMobileNav" v-show="visible.mobileNav" style="display: none;"></div>
     </i>
-        <a class="header-logo" href="/">
-          <img class="header-logo-image" alt="logo" src="/buyandshipdemo/assets/img/company_logo_dark.png" srcset="
-            /buyandshipdemo/assets/img/company_logo_dark.png 1x,
-            /buyandshipdemo/assets/img/company_logo_dark@2x.png 2x,
-            /buyandshipdemo/assets/img/company_logo_dark@3x.png 3x
+    <a class="header-logo" href="/">
+      <img class="header-logo-image" alt="logo" src="/assets/img/company_logo_dark.png" srcset="
+            /assets/img/company_logo_dark.png 1x,
+            /assets/img/company_logo_dark@2x.png 2x,
+            /assets/img/company_logo_dark@3x.png 3x
           ">
-          <img class="header-logo-image-sm" alt="logo" src="/buyandshipdemo/assets/img/company_logo_box.png" srcset="
-            /buyandshipdemo/assets/img/company_logo_box.png 1x,
-            /buyandshipdemo/assets/img/company_logo_box@2x.png 2x,
-            /buyandshipdemo/assets/img/company_logo_box@3x.png 3x
+      <img class="header-logo-image-sm" alt="logo" src="/assets/img/company_logo_box.png" srcset="
+            /assets/img/company_logo_box.png 1x,
+            /assets/img/company_logo_box@2x.png 2x,
+            /assets/img/company_logo_box@3x.png 3x
           ">
+    </a>
+    <nav class="header-nav">
+      <div class="header-nav-item header-nav-item--more">
+        <a class="header-country" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
+          <div class="bs-icon-country"></div>
+          <span>台灣</span>
         </a>
-        <nav class="header-nav">
-          <div class="header-nav-item header-nav-item--more">
-            <a class="header-country" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
-              <div class="bs-icon-country"></div>
-              <span>台灣</span>
-            </a>
-          </div>
-        </nav>
-        <!-- <bs-locale-select /> -->
       </div>
-      <div class="header-r">
-        <nav class="header-nav">
-          <div class="header-nav-item">
-            <a class="header-nav-item-link" href="/tutorial">代運使用教學</a>
-          </div>
-          <div class="header-nav-item">
-            <a class="header-nav-item-link" href="/pricing">運費計算</a>
-          </div>
-          <div class="header-nav-item header-nav-item--more">
-            <a href="javascript:;" @click.prevent="toggleNavPanel('shopping')">
-              精選購物網站
-              <i class="bs-icon-arrow-down"></i>
-            </a>
-          </div>
-          <div class="header-nav-item header-nav-item--more">
-            <a href="javascript:;" @click.prevent="toggleNavPanel('faq')">
-              常見問題
-              <i class="bs-icon-arrow-down"></i>
-            </a>
-          </div>
-        </nav>
-
-        <div bs-logout class="header-r-member">
-          <a class="header-member" href="https://www.buyandship.com.tw/login/">
-            <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">登入</span>
-          </a>
-          <!-- <div class="header-member-sign-sm text-subtitle-sm" @click="signup">Sign&nbsp;up</div> -->
-          <button class="bs-button header-member-sign text-subtitle-sm bs-button--primary bs-button--md" @click="$gobalFunction.redirect('https://www.buyandship.com.tw/login/')">
-            註冊
-          </button>
-        </div>
-
-        <div bs-login class="header-r-member">
-          <a class="header-member header-member--m" href="https://www.buyandship.com.tw/account">
-            <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">你好，Christ Shui</span>
-          </a>
-          <a class="header-member header-member--pc" href="https://www.buyandship.com.tw/account">
-            <i class="header-member-icon bs-icon-user"></i>
-            <span class="header-member-icon-desc text-subtitle-sm">我的帳戶</span>
-          </a>
-          <aside class="header-account">
-            <div class="header-account-overlay"></div>
-            <ul class="header-account-list">
-              <li class="header-account-list-item"><a href="">我的帳戶</a></li>
-              <li class="header-account-list-item"><a href="">個人資料</a></li>
-              <li class="header-account-list-item"><a href="">海外倉庫</a></li>
-              <li class="header-account-list-item"><a href="">我的貨物</a></li>
-              <li class="header-account-list-item"><a href="">我的轉運單</a></li>
-              <li class="header-account-list-item"><a href="">登出</a></li>
-            </ul>
-          </aside>
-        </div>
+    </nav>
+  </div>
+  <div class="header-r">
+    <nav class="header-nav">
+      <div class="header-nav-item">
+        <a class="header-nav-item-link"
+          href="/tutorial/">代運使用教學</a>
       </div>
-    </header>
+      <div class="header-nav-item">
+        <a class="header-nav-item-link"
+          href="/pricing/">運費計算</a>
+      </div>
+      <div class="header-nav-item header-nav-item--more">
+        <a href="javascript:;" @click.prevent="toggleNavPanel('shopping')">
+          精選購物網站
+          <i class="bs-icon-arrow-down"></i>
+        </a>
+      </div>
+      <div class="header-nav-item header-nav-item--more">
+        <a href="javascript:;" @click.prevent="toggleNavPanel('faq')">
+          常見問題
+          <i class="bs-icon-arrow-down"></i>
+        </a>
+      </div>
+    </nav>
 
-    <bs-nav-panel v-model="isShowNav.shopping" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="/shopping">發燒話題</a>
-      <a class="text-h4" href="/shopping">最新消息</a>
-      <a class="text-h4" href="/shopping">精選購物網站</a>
-    </bs-nav-panel>
-    <bs-nav-panel v-model="isShowNav.faq" @on-hide="currentNav = ''" v-cloak>
-      <a class="text-h4" href="/faq">常見問題</a>
-      <a class="text-h4" href="/warehouses">海外倉庫一覽</a>
-      <a class="text-h4" href="/restrictions">禁運物品目錄</a>
-      <a class="text-h4" href="/contact-us">聯絡我們</a>
-      <a class="text-h4" href="/advantage">我們的優勢</a>
-      <a class="text-h4" href="/insurance">貨物保價服務</a>
-      <a class="text-h4" href="/terms">使用條款</a>
-      <a class="text-h4" href="/privacy">隱私政策</a>
-    </bs-nav-panel>
-    <bs-nav-panel v-model="isShowNav.country" @on-hide="currentNav = ''" v-cloak>
-      <div class="country-title text-h6">請選擇國家或地區</div>
-      <a-row>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.tw/">
-            <span class="icon-flag-tw"></span>
-            <span class="ml">台灣</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://mo.buynship.com/">
-            <span class="icon-flag-mo"></span>
-            <span class="ml">澳門</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.today/">
-            <span class="icon-flag-hk"></span>
-            <span class="ml">香港</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.cn/">
-            <span class="icon-flag-cn"></span>
-            <span class="ml">中國</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.co.jp/">
-            <span class="icon-flag-jp"></span>
-            <span class="ml">日本</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://au.buynship.com/">
-            <span class="icon-flag-au"></span>
-            <span class="ml">澳洲</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.sg/">
-            <span class="icon-flag-sg"></span>
-            <span class="ml">新加坡</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.my/">
-            <span class="icon-flag-my"></span>
-            <span class="ml">馬來西亞</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://www.buyandship.in/">
-            <span class="icon-flag-in"></span>
-            <span class="ml">印度</span>
-          </a>
-        </a-col>
-        <a-col class="country-card" :xs="12" :md="12" :xl="12">
-          <a class="country-item text-subtitle-sm" href="https://ae.buynship.com/">
-            <span class="icon-flag-ea"></span>
-            <span class="ml">阿聯酋</span>
-          </a>
-        </a-col>
-      </a-row>
+    <div bs-logout class="header-r-member">
+      <a class="header-member" href="https://www.buyandship.com.tw/login/">
+        <i class="header-member-icon bs-icon-user"></i>
+        <span class="header-member-icon-desc text-subtitle-sm">登入</span>
+      </a>
+      <!-- <div class="header-member-sign-sm text-subtitle-sm" @click="signup">Sign&nbsp;up</div> -->
+      <a class="bs-button header-member-sign text-subtitle-sm bs-button--primary bs-button--md"
+        href="https://www.buyandship.com.tw/signup/">
+        註冊
+      </a>
+    </div>
 
-      <!-- <a href="#" style="display: inline-block"><span>Singapore</span></a>
-        </li>
-        <li>
-          <a href="#"><span>Malaysia</span></a>
-        </li>
-        <li>
-          <a href="#"><span>Hong Kong</span></a>
-        </li>
-        <li>
-          <a href="#"><span>Macau</span></a>
-        </li>
-        <li>
-          <a href="#"><span>China</span></a>
-        </li>
-        <li>
-          <a href="#"><span>Japan</span></a>
-        </li>
-        <li>
-          <a href="#"><span>India</span></a>           -->
+    <div bs-login class="header-r-member">
+      <a class="header-member header-member--m" href="https://www.buyandship.com.tw/account/">
+        <i class="header-member-icon bs-icon-user"></i>
+        <span class="header-member-icon-desc text-subtitle-sm">你好，Christ Shui</span>
+      </a>
+      <a class="header-member header-member--pc" href="https://www.buyandship.com.tw/account/">
+        <i class="header-member-icon bs-icon-user"></i>
+        <span class="header-member-icon-desc text-subtitle-sm">我的帳戶</span>
+      </a>
+      <aside class="header-account">
+        <div class="header-account-overlay"></div>
+        <ul class="header-account-list">
+          <li class="header-account-list-item"><a href="">我的帳戶</a></li>
+          <li class="header-account-list-item"><a href="">個人資料</a></li>
+          <li class="header-account-list-item"><a href="">海外倉庫</a></li>
+          <li class="header-account-list-item"><a href="">我的貨物</a></li>
+          <li class="header-account-list-item"><a href="">我的轉運單</a></li>
+          <li class="header-account-list-item"><a href="">登出</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</header>
 
-    </bs-nav-panel>
-    <aside class="mobile-nav" :class="{ 'mobile-nav-open': visible.mobileNav }" v-cloak>
-      <div class="mobile-nav-inner">
-        <nav class="slinky-menu slinky-theme-default">
-          <ul>
-            <li bs-login>
-              <a href="/tutorial"><span
-                  class="text-subtitle-sm">我的帳戶</span></a>
-            </li>
-            <li bs-login>
-              <a href="/tutorial"><span
-                  class="text-subtitle-sm">海外倉庫</span></a>
-            </li>
-            <li bs-login>
-              <a href="/tutorial"><span
-                  class="text-subtitle-sm">我的貨物</span></a>
-            </li>
-            <li bs-login>
-              <a class="slinky-menu__underline" href="/tutorial"><span
-                  class="text-subtitle-sm">我的轉運單</span></a>
-            </li>
-            <li>
-              <a href="/tutorial"><span
-                  class="text-subtitle-sm">代運使用教學</span></a>
-            </li>
-            <li>
-              <a href="/pricing"><span
-                  class="text-subtitle-sm">運費計算</span></a>
-            <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">精選購物網站</span></a>
-              <ul>
-                <li>
-                  <a href="/shopping"><span>購物</span></a>
-                <li>
-                <li>
-                  <a href="/restrictions"><span>貨物限制</span></a>
-                </li>
-                <!-- <li>
-                  <a href="#" class="next"><span>Led Zeppelin</span></a>
-                  <ul>
-                    <li>
-                      <a href="#" class="next"><span>Physical Graffiti</span></a>
-                      <ul>
-                        <li>
-                          <a href="#"><span>Houses of the Holy</span></a>
-                        </li>
-                        <li>
-                          <a href="#"><span>In My Time of Dying</span></a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li> -->
-              </ul>
-            </li>
-            <li>
-              <a href="#" class="next slinky-menu__underline">
-                <span class="text-subtitle-sm">常見問題</span>
-              </a>
-              <ul>
-                <li>
-                  <a href="/faq"><span>常見問題</span></a>
-                </li>
-                <li>
-                  <a href="/warehouses"><span>海外倉庫一覽</span></a>
-                </li>
-                <li>
-                  <a href="/contact-us"><span>聯絡我們</span></a>
-                </li>
-                <li>
-                  <a href="/terms"><span>使用條款</span></a>
-                </li>
-                <li>
-                  <a href="/privacy"><span>隱私政策</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#" class="next"><span class="text-subtitle-sm">國家及地區</span></a>
-              <ul>
-                <li>
-                  <a href="https://www.buyandship.com.tw/">
-                    <i class="slinky-link__icon icon-flag-tw-md"></i>
-                    <span class="slinky-link__desc ml">台灣</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://mo.buynship.com/">
-                    <i class="slinky-link__icon icon-flag-mo-md"></i>
-                    <span class="slinky-link__desc ml">澳門</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.today/">
-                    <i class="slinky-link__icon icon-flag-hk-md"></i>
-                    <span class="slinky-link__desc ml">香港</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.cn/">
-                    <i class="slinky-link__icon icon-flag-cn-md"></i>
-                    <span class="slinky-link__desc ml">中國</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.co.jp/">
-                    <i class="slinky-link__icon icon-flag-jp-md"></i>
-                    <span class="slinky-link__desc ml">日本</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://au.buynship.com/">
-                    <i class="slinky-link__icon icon-flag-au-md"></i>
-                    <span class="slinky-link__desc ml">澳洲</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.com.sg/">
-                    <i class="slinky-link__icon icon-flag-sg-md"></i>
-                    <span class="slinky-link__desc ml">新加坡</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.com.my/">
-                    <i class="slinky-link__icon icon-flag-my-md"></i>
-                    <span class="slinky-link__desc ml">馬來西亞</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.buyandship.in/">
-                    <i class="slinky-link__icon icon-flag-in-md"></i>
-                    <span class="slinky-link__desc ml">印度</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://ae.buynship.com/">
-                    <i class="slinky-link__icon icon-flag-ea-md"></i>
-                    <span class="slinky-link__desc ml">阿聯酋</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- <li>
+      <bs-nav-panel v-model="isShowNav.shopping" @on-hide="currentNav = ''" v-cloak>
+        <a class="text-h4"
+          href="/shopping/">發燒話題</a>
+        <a class="text-h4" href="/shopping/">最新消息</a>
+        <a class="text-h4" href="/shopping/">精選購物網站</a>
+      </bs-nav-panel>
+      <bs-nav-panel v-model="isShowNav.faq" @on-hide="currentNav = ''" v-cloak>
+        <a class="text-h4" href="/faq/">常見問題</a>
+        <a class="text-h4" href="/warehouses/">海外倉庫一覽</a>
+        <a class="text-h4" href="/restrictions/">禁運物品目錄</a>
+        <a class="text-h4" href="/contact-us/">聯絡我們</a>
+        <a class="text-h4" href="/advantage/">我們的優勢</a>
+        <a class="text-h4" href="/insurance/">貨物保價服務</a>
+        <a class="text-h4" href="/terms/">使用條款</a>
+        <a class="text-h4" href="/privacy/">隱私政策</a>
+      </bs-nav-panel>
+      <bs-nav-panel v-model="isShowNav.country" @on-hide="currentNav = ''" v-cloak>
+        <div class="country-title text-h6">請選擇國家或地區</div>
+        <a-row>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.tw/">
+              <span class="icon-flag-tw"></span>
+              <span class="text-subtitle-sm ml">台灣</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://mo.buynship.com/">
+              <span class="icon-flag-mo"></span>
+              <span class="text-subtitle-sm ml">澳門</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.today/">
+              <span class="icon-flag-hk"></span>
+              <span class="text-subtitle-sm ml">香港</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.cn/">
+              <span class="icon-flag-cn"></span>
+              <span class="text-subtitle-sm ml">中國</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.co.jp/">
+              <span class="icon-flag-jp"></span>
+              <span class="text-subtitle-sm ml">日本</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://au.buynship.com/">
+              <span class="icon-flag-au"></span>
+              <span class="text-subtitle-sm ml">澳洲</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.sg/">
+              <span class="icon-flag-sg"></span>
+              <span class="text-subtitle-sm ml">新加坡</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.com.my/">
+              <span class="icon-flag-my"></span>
+              <span class="text-subtitle-sm ml">馬來西亞</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://www.buyandship.in/">
+              <span class="icon-flag-in"></span>
+              <span class="text-subtitle-sm ml">印度</span>
+            </a>
+          </a-col>
+          <a-col class="country-card" :xs="12" :md="12" :xl="12">
+            <a class="country-item text-subtitle-sm" href="https://ae.buynship.com/">
+              <span class="icon-flag-ea"></span>
+              <span class="text-subtitle-sm ml">阿聯酋</span>
+            </a>
+          </a-col>
+        </a-row>
+      </bs-nav-panel>
+      <aside class="mobile-nav" :class="{ 'mobile-nav-open': visible.mobileNav }" ref="mobileNav" v-cloak>
+        <div class="mobile-nav-inner">
+          <nav class="slinky-menu slinky-theme-default">
+            <ul>
+              <li bs-login>
+                <a href="/tutorial/"><span
+                    class="text-subtitle-sm">我的帳戶</span></a>
+              </li>
+              <li bs-login>
+                <a href="/tutorial/"><span
+                    class="text-subtitle-sm">海外倉庫</span></a>
+              </li>
+              <li bs-login>
+                <a href="/tutorial/"><span
+                    class="text-subtitle-sm">我的貨物</span></a>
+              </li>
+              <li bs-login>
+                <a class="slinky-menu__underline" href="/tutorial/"><span
+                    class="text-subtitle-sm">我的轉運單</span></a>
+              </li>
+              <li>
+                <a href="/tutorial/"><span
+                    class="text-subtitle-sm">代運使用教學</span></a>
+              </li>
+              <li>
+                <a href="/pricing/"><span
+                    class="text-subtitle-sm">運費計算</span></a>
+              <li>
+                <a href="#" class="next"><span class="text-subtitle-sm">精選購物網站</span></a>
+                <ul>
+                  <li>
+                    <a href="/shopping/"><span
+                        class="text-subtitle-sm">購物</span></a>
+                  <li>
+                  <li>
+                    <a href="/restrictions/"><span
+                        class="text-subtitle-sm">貨物限制</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="next slinky-menu__underline">
+                  <span class="text-subtitle-sm">常見問題</span>
+                </a>
+                <ul>
+                  <li>
+                    <a href="/faq/"><span
+                        class="text-subtitle-sm">常見問題</span></a>
+                  </li>
+                  <li>
+                    <a href="/warehouses/"><span
+                        class="text-subtitle-sm">海外倉庫一覽</span></a>
+                  </li>
+                  <li>
+                    <a href="/contact-us/"><span
+                        class="text-subtitle-sm">聯絡我們</span></a>
+                  </li>
+                  <li>
+                    <a href="/terms/"><span
+                        class="text-subtitle-sm">使用條款</span></a>
+                  </li>
+                  <li>
+                    <a href="/privacy/"><span
+                        class="text-subtitle-sm">隱私政策</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="next"><span class="text-subtitle-sm">國家及地區</span></a>
+                <ul>
+                  <li>
+                    <a href="https://www.buyandship.com.tw/">
+                      <i class="slinky-link__icon icon-flag-tw-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">台灣</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://mo.buynship.com/">
+                      <i class="slinky-link__icon icon-flag-mo-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">澳門</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.today/">
+                      <i class="slinky-link__icon icon-flag-hk-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">香港</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.cn/">
+                      <i class="slinky-link__icon icon-flag-cn-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">中國</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.co.jp/">
+                      <i class="slinky-link__icon icon-flag-jp-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">日本</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://au.buynship.com/">
+                      <i class="slinky-link__icon icon-flag-au-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">澳洲</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.com.sg/">
+                      <i class="slinky-link__icon icon-flag-sg-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">新加坡</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.com.my/">
+                      <i class="slinky-link__icon icon-flag-my-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">馬來西亞</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.buyandship.in/">
+                      <i class="slinky-link__icon icon-flag-in-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">印度</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://ae.buynship.com/">
+                      <i class="slinky-link__icon icon-flag-ea-md"></i>
+                      <span class="slinky-link__desc text-subtitle-sm ml">阿聯酋</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- <li>
               <a href="#" class="next"><span class="text-subtitle-sm">Language</span></a>
               <ul>
                 <li>
@@ -355,565 +329,718 @@
                 </li>
               </ul>
             </li> -->
-            <li bs-login>
-              <a href="/tutorial"><span
-                  class="text-subtitle-sm">登出</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="mobile-nav-spacer">
-        <!-- <div class="mobile-nav-mask" v-show="!isMobileNavScrollBottom"></div> -->
-      </div>
-    </aside>
+              <li bs-login>
+                <a href="/tutorial/"><span
+                    class="text-subtitle-sm">登出</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mobile-nav-spacer">
+          <!-- <div class="mobile-nav-mask" v-show="!isMobileNavScrollBottom"></div> -->
+        </div>
+      </aside>
 
-    <transition name="opacity" v-cloak>
-      <div class="bs-overlay" v-show="visible.overlay" @click="hideNavPanel"></div>
-    </transition>
+      <transition name="opacity" v-cloak>
+        <div class="bs-overlay" v-show="visible.overlay" @click="hideNavPanel"></div>
+      </transition>
 
-    <bs-header-login ref="loginPanel"></bs-header-login>
+    </div>
+
+    <!-- <bs-header-login ref="loginPanel"></bs-header-login>
     <bs-header-signup ref="signupPanel"></bs-header-signup>
     <bs-header-forget-password ref="forgetpasswordPanel"></bs-header-forget-password>
-    <bs-header-reset-password ref="resetpasswordPanel"></bs-header-reset-password>
-
+    <bs-header-reset-password ref="resetpasswordPanel"></bs-header-reset-password> -->
 
     <!-- WP:start -->
+    <!-- <link rel="stylesheet" href="../assets/css/blog-detail.css?05c77b82e57369e71167"> -->
 
-    <main class="main">
-      <article class="bs-container bs-container--paddingV bs-blog">
-        <div class="bs-blog__content bs-blog__detail">
-          <ul class="bs-blog__breadcrumb">
-            <li class="bs-blog__breadcrumb__item text-body-sm">
-              <a class="bs-blog__breadcrumb__item--link" href="https://www.buyandship.com.tw">Home</a>
-            </li>
-            <li class="bs-blog__breadcrumb__item text-body-sm">
-              <a class="bs-blog__breadcrumb__item--link" href="https://www.buyandship.com.tw/blog/categories/mixmatch/">潮流穿搭</a>
-            </li>
-            <li class="bs-blog__breadcrumb__item text-body-sm">【法國Redline小紅繩網購】超感謝出貨快運費又便宜的Buyandship！終於入手Redline啦♥‿♥</li>
-          </ul>
-          <h1 class="bs-blog__detail__title text-h6">
-            【法國Redline小紅繩網購】超感謝出貨快運費又便宜的Buyandship！終於入手Redline啦♥‿♥
-          </h1>
-          <h2 class="bs-blog__detail__time text-caption">2019-09-17</h2>
-          <div class="entry-content bs-blog__detail__content">
+
+<main id="bsMain" class="main">
+  <article class="bs-container bs-container--paddingV bs-blog">
+    <div class="bs-blog__content bs-blog__detail">
+      <ul class="bs-blog__breadcrumb">
+        <li class="bs-blog__breadcrumb__item text-body-sm">
+          <a class="bs-blog__breadcrumb__item--link" href="https://www.buyandship.com.tw/">Home</a>
+        </li>
+        <li class="bs-blog__breadcrumb__item text-body-sm">
+          <a class="bs-blog__breadcrumb__item--link"
+            href="https://www.buyandship.com.tw/blog/categories/mixmatch/">潮流穿搭</a>
+        </li>
+        <li class="bs-blog__breadcrumb__item text-body-sm">【法國Redline小紅繩網購】超感謝出貨快運費又便宜的Buyandship！終於入手Redline啦♥‿♥</li>
+      </ul>
+      <h1 class="bs-blog__detail__title text-h6">
+        【法國Redline小紅繩網購】超感謝出貨快運費又便宜的Buyandship！終於入手Redline啦♥‿♥
+      </h1>
+      <h2 class="bs-blog__detail__time text-caption">2019-09-17</h2>
+      <div class="entry-content bs-blog__detail__content">
+        <blockquote>
+          <h2 style="text-align: center;"><strong>跟著Buyandship海外網購買出新高度</strong></h2>
+          <p>
+            <strong>Buyandship國際代運幫你把海外戰利品輕鬆運回來！英國、義大利倉庫幫你收，還有保險服務好安心，連台灣關稅也直接幫你省下來，是不是太划算！全球九大倉庫免費合併、收費方式透明，不靠代購、實重實收好佛心，沒有在跟你算材積的！</strong>
+          </p>
+        </blockquote>
+        <p><img class="size-full wp-image-448966 aligncenter"
+            src="https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56.jpg" alt=""
+            width="2496" height="1372"
+            srcset="https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56.jpg 2496w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-500x275.jpg 500w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-768x422.jpg 768w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-1024x563.jpg 1024w"
+            sizes="(max-width: 2496px) 100vw, 2496px"></p>
+        <p>文章原文出處:<a href="http://ilovesunshine611.pixnet.net/blog/post/222028446" target="_blank" rel="noopener"><img
+              draggable="false" class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/11/svg/2764.svg">♡ 白丸子
+            ♡<img draggable="false" class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/11/svg/2764.svg"></a>
+        </p>
+        <div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
+          <div style="display: flex; flex-direction: column; width: 100%;">
             <blockquote>
-              <h2 style="text-align: center;"><strong>跟著Buyandship海外網購買出新高度</strong></h2>
-              <p>
-                <strong>Buyandship國際代運幫你把海外戰利品輕鬆運回來！英國、義大利倉庫幫你收，還有保險服務好安心，連台灣關稅也直接幫你省下來，是不是太划算！全球九大倉庫免費合併、收費方式透明，不靠代購、實重實收好佛心，沒有在跟你算材積的！</strong>
-              </p>
+              <p>有了二寶之後我寫網誌速度變超慢，這篇會生的這麼快，實在是因為我的心情太雀躍了，畢竟這次入手的東西是我想了好久好久，真的很久的飾品redline!!!實際應該有兩年吧XDDDD</p>
+              <p>心路歷程等等再說，先來看一下開箱！！外層是這次的代運公司Buyandship的包裝。（這篇會有超詳細的Buyandship和redline官網購物教學步驟喔！）</p>
             </blockquote>
-            <p><img class="size-full wp-image-448966 aligncenter" src="https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56.jpg" alt="" width="2496" height="1372" srcset="https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56.jpg 2496w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-500x275.jpg 500w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-768x422.jpg 768w, https://www.buyandship.com.tw/contents/uploads/2018/06/螢幕快照-2019-09-17-下午2.02.56-1024x563.jpg 1024w" sizes="(max-width: 2496px) 100vw, 2496px"></p>
-            <p>文章原文出處:<a href="http://ilovesunshine611.pixnet.net/blog/post/222028446" target="_blank" rel="noopener"><img draggable="false" class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/11/svg/2764.svg">♡ 白丸子
-                ♡<img draggable="false" class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/11/svg/2764.svg"></a>
-            </p>
-            <div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
-              <div style="display: flex; flex-direction: column; width: 100%;">
-                <blockquote>
-                  <p>有了二寶之後我寫網誌速度變超慢，這篇會生的這麼快，實在是因為我的心情太雀躍了，畢竟這次入手的東西是我想了好久好久，真的很久的飾品redline!!!實際應該有兩年吧XDDDD</p>
-                  <p>心路歷程等等再說，先來看一下開箱！！外層是這次的代運公司Buyandship的包裝。（這篇會有超詳細的Buyandship和redline官網購物教學步驟喔！）</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965156940_f2785cfd95_h.jpg"></div>
-                <blockquote>
-                  <p>再來一層是FedEx的包裝。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058417714_43e385185c_h.jpg"></div>
-                <blockquote>
-                  <p>竟然還有一層包裝，我猜是redline官網出貨包裝。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875291065_d44156b8be_h.jpg"></div>
-                <blockquote>
-                  <p>吼吼吼～還沒看到redline實品，打開redline的包裝之後會有這一大堆東西。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965154770_ca190c4fde_h.jpg"></div>
-                <blockquote>
-                  <p>包含了下圖左方的收據、下圖右的redline盒子。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: row; width: 100%;">
-                  <img style="width: 50%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875289485_a15eca3f05_h.jpg"><br>
-                  <img style="width: 50%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965158950_60bdfc036b_h.jpg"></div>
-                <blockquote>
-                  <p>再來還有下圖的購買保證卡。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: row; width: 100%;">
-                  <img style="width: 50%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/1-7.jpg"><br>
-                  <img style="width: 50%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058418104_f6a36f60c4_h.jpg"></div>
-                <blockquote>
-                  <p>終於！看到我朝思暮想的redline啦～～～（自從在官網下單後我幾乎每天在看Buyandship的運送歷程，是否有點神經XDDD）<br>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965156940_f2785cfd95_h.jpg"></div>
+            <blockquote>
+              <p>再來一層是FedEx的包裝。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058417714_43e385185c_h.jpg"></div>
+            <blockquote>
+              <p>竟然還有一層包裝，我猜是redline官網出貨包裝。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875291065_d44156b8be_h.jpg"></div>
+            <blockquote>
+              <p>吼吼吼～還沒看到redline實品，打開redline的包裝之後會有這一大堆東西。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965154770_ca190c4fde_h.jpg"></div>
+            <blockquote>
+              <p>包含了下圖左方的收據、下圖右的redline盒子。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: row; width: 100%;">
+              <img style="width: 50%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875289485_a15eca3f05_h.jpg"><br>
+              <img style="width: 50%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965158950_60bdfc036b_h.jpg"></div>
+            <blockquote>
+              <p>再來還有下圖的購買保證卡。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: row; width: 100%;">
+              <img style="width: 50%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/1-7.jpg"><br>
+              <img style="width: 50%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058418104_f6a36f60c4_h.jpg"></div>
+            <blockquote>
+              <p>終於！看到我朝思暮想的redline啦～～～（自從在官網下單後我幾乎每天在看Buyandship的運送歷程，是否有點神經XDDD）<br>
                 我這次買的是最經典熱門的illusion系列，紅繩部分可承受80公斤的拉力，繩上的鑽石共0.05克拉，設計其實非常非常簡單，但偏偏我就是個很愛這樣簡單設計的人，所以當時在其他部落客網誌看到，幾乎可說是一眼就愛上
               </p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965154370_85d41473ef_h.jpg"><br>
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058418474_160120d230_h.jpg"></div>
-                <blockquote>
-                  <p>簡單分享幾張實戴照。單戴的樣子。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42726093492_80611ba0d1_h.jpg"></div>
-                <blockquote>
-                  <p>因為redline的設計很簡單，就算同時戴手錶也不覺得多餘或累贅。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058417534_e2f6f78baa_h.jpg"><br>
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965159410_0040b901b4_h.jpg"></div>
-                <blockquote>
-                  <p>
-                    當初看上這條redline，其實跟當時的男朋友（就是現在的老公）提過滿多次想買的，他倒是沒阻止過我，但我自己猶豫很久，一部分是因為除了手錶跟包包之外，我不曾在飾品上花這麼多錢，（就illusion這最經典簡單的款式都要一萬左右）
-                  </p>
-                  <p>
-                    再來是後來有了小孩，又很怕寶寶把redline扯壞，（雖說訴求可承受80公斤的拉力，但還是會怕XDDD），一拖就拖了好久，這次是剛好今年生日快到了，老公問我想要什麼禮物，我不假思索還是提了redline，就決定開始研究購買方式了。
-                  </p>
-                  <p>
-                    redline在台灣其實已經有設櫃了，但根據過往比價經驗，台灣代理商的價格通常讓我覺得不合理，所以我直接就上redline官網研究，一看發現哎呦好貼心竟然可以切換成簡體中文介面，也可以直接配送台灣耶！但這條redline我最後是決定透過代運的方式，而不是直寄台灣，以下是我考量的幾個原因：
-                  </p>
-                  <p>1.
-                    雖然我以前有過直接在國外網站購買的經驗，但不管買過幾次還是會怕東西丟包，如果丟包超級麻煩！考驗英文能力不說，也不知道國外網站客服能協助到什麼程度可是透過代運公司，配送全程都是透明化，到國外倉庫、到香港倉庫、準備轉運寄出任何進度都相當清楚，而且隨時都有中文客服人員可以幫忙解決，整個很安心放心！
-                  </p>
-                  <p>2. 常在國外網站買東西的都知道，2018年起買超過2000元就會被課關稅，這點Buyandship在台灣報關時會貼心的幫忙“處理”一下，所以我這次…..恩，PASS</p>
-                  <p>3. Buyandship有提供貨件保價服務，只要付出申報價格的3%費用，便可獲得最多 1,000美元（或按匯率的同等價格外幣）的賠償金額，所以就算東西遺失也不怕，買更高單價的精品也覺得有保障。</p>
-                  <p>
-                    就是以上幾個原因，讓我最後選擇代運公司而不是直寄台灣，而且我原本以為透過代運公司會更久一點才收到，結果我6/1下單，6/13就收到實品了，工作天才七天而已耶！！！真是太出乎我意料了講完了心路歷程，就來分享購物教學囉。
-                  </p>
-                  <p>1. 先上Buyandship代運網站註冊會員。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875289185_4d22691b99_h.jpg"></div>
-                <blockquote>
-                  <p>2. 填寫完資料就註冊成功了。（對不起這兩個步驟好像有點廢因為是繁體中文XDDD）</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875288895_2d20d4c458_h.jpg"></div>
-                <blockquote>
-                  <p>3. 上redline網站，在左上角可以選擇國旗，切換成簡體中文介面。（建議可以先註冊會員）</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875288575_4912a3febb_h.jpg"></div>
-                <blockquote>
-                  <p>4. 挑選自己喜歡的款式。我是進入TIMELESS分類選擇illusion款式。（其實還有寶寶款redline我也有點心動XDD）</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/42726090442_8fd36ab954_h.jpg"></div>
-                <blockquote>
-                  <p>5. 再來選擇想要的設計，有半繩半鍊，也有雙鍊或是多顆鑽石的，我選最簡單的單鑽、單紅繩的設計。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147940_1e0a300c10_h.jpg"></div>
-                <blockquote>
-                  <p>6. 進到頁面之後，還有更客製化的選項。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147590_d5fb0df3f8_h.jpg"></div>
-                <blockquote>
-                  <p>
-                    可以選擇金屬部分顏色、手鍊長度和繩子的顏色，根據自己喜好搭配。（買之前我特別量過自己手腕，大概15.5公分，我怕戴得太緊所以挑16.5公分，而redline有三孔可以微調長度，我是扣第二個孔，提供給大家挑選尺寸參考）
-                  </p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 60%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147060_de9460a0c7_c-1.jpg"></div>
-                <blockquote>
-                  <p>7. 都挑選好自己想要的設計之後點選『添加到購物車』就進到下圖購物車頁面。再確認一下自己挑的商品、數量是否正確。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965146750_6c52a51a61_h.jpg"></div>
-                <blockquote>
-                  <p>此時也會列出自己購買的商品金額及增值稅，和小計金額。 確認沒錯就勇敢按下『進行結帳』！</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965146310_fc115693c0_h.jpg"></div>
-                <blockquote>
-                  <p>8. 再來會進到結帳頁面，準備填寫自己的帳單資料。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145940_e5bb1ba06a_h.jpg"></div>
-                <blockquote>
-                  <p>9. 因為我是選擇代運公司，所以在填寫相關賬單、寄送資料時我就去打開Buyandship網站。登入後進入會員中心會有個『海外倉庫地址』。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145430_e2afafdf8c_h.jpg"></div>
-                <blockquote>
-                  <p>10. 在海外倉庫地址這邊，有幾個國家的倉庫可選擇。redline在法國，所以我選同樣在歐洲的英國倉庫。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145030_4cd4ebf2d3_h.jpg"></div>
-                <blockquote>
-                  <p>11. 選擇倉庫之後就會有更詳細的資訊。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965144560_3e7e70f448_h.jpg"></div>
-                <blockquote>
-                  <p>12. 為了怕複製貼錯，我是建議可以將Buyandship倉庫資訊的視窗跟redline要填資料的視窗放左右比對顯示。名字可以寫自己的名字翻譯，姓氏我則填上Buyandship給的TW開頭的用戶碼。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965144150_e3e642b914_h.jpg"></div>
-                <blockquote>
-                  <p>13. 地址、城市、郵遞區號、電話就照著Buyandship給的一一填上即可。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965143820_221523b7e3_c.jpg"></div>
-                <blockquote>
-                  <p>14. 填完之後選下一步，會出現下圖讓你再重複確認一次。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965143440_775c8f7735_h.jpg"></div>
-                <blockquote>
-                  <p>15. 運送方式我是選擇比較便宜的FedEx。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875283855_0b3038b89c_h.jpg"></div>
-                <blockquote>
-                  <p>16. 支付方式選擇信用卡。再點選『繼續』。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875283445_fb71137345_h.jpg"></div>
-                <blockquote>
-                  <p>17. 這裡會將運費也列出來再小計一次。同時也最後再確認一下自己的收件資訊是否正確。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282945_a70855643c_h.jpg"></div>
-                <blockquote>
-                  <p>18. 接著跳出信用卡支付視窗，勇敢的填下去吧！</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282545_ee7e9d6654_h.jpg"></div>
-                <blockquote>
-                  <p>19. 勇敢地填完之後會自動跳轉回redline官網顯示購買完成，同步我的手機也收到了刷卡成功的簡訊了（煙）。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282125_91b3e71c67_h.jpg"></div>
-                <blockquote>
-                  <p>20.
-                    redline官網購買完畢之後就可以關掉了，接下來重點開始放在Buyandship，購買完畢之後可以先去Buyandship網站，登入會員，進入會員中心，在『收貨地址管理』項目中先輸入自己在台灣的收件資訊。
-                  </p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965141060_196be1da1f_h.jpg"></div>
-                <blockquote>
-                  <p>21. 接著隔一兩天，會收到由redline網站發出的通知信，告知商品已透過FedEx寄出。此時就再去Buyandship網站登入，進入會員中心的『貨件申報管理』中填寫資料。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965140640_223b2a4290_h.jpg"></div>
-                <blockquote>
-                  <p>22. 同樣的，為了怕複製貼錯，我將Email信箱跟貨件申報管理視窗開左右比照，倉庫就選擇自己當時挑選的倉庫，我是選英國倉庫，貨運公司是FedEx，貨物追蹤編號就看Email中的『Tracking#』。
-                  </p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965140340_af5c517b12_h.jpg"></div>
-                <blockquote>
-                  <p>23. 產品資料也要填，沒填寫資料送不出去喔。填完之後再點擊『提交』即可。 這個地方就是我前文提到可以選擇額外購買3%遺失保價服務，購買商品單價高的建議勾選囉。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965139750_fe57e1ef7d_h.jpg"></div>
-                <blockquote>
-                  <p>24. 再來就會出現下圖，確認一下自己申報的貨件資訊有沒有錯。沒錯就點擊『以上資料正確及提交』。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965139390_d654fbefa3_h.jpg"></div>
-                <blockquote>
-                  <p>25. 申報完之後，就可以時不時來看一下商品的配送進度。6/1 redline官網下單，6/2我就收到出貨通知，當天上Buyandship網站申報。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138940_cea17f8f51_h.jpg"></div>
-                <blockquote>
-                  <p>26. 再登入看的時候，顯示6/9已經在香港倉庫。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138310_59750876f4_c.jpg"></div>
-                <blockquote>
-                  <p>27. 到香港倉庫之後，需要開始轉運，這時就勾選你已經申報的貨件進行合併。挑選取貨方式：我是挑選台灣住家地址。這時有120元的積分可以使用，直接勾選吧！再來選付轉運費的方式～</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138130_91d5230f36_h.jpg"></div>
-                <blockquote>
-                  <p>28.
-                    Buyandship運費計算方式，1磅是150元台幣，redline很輕不到一磅，以一磅計算是150元，但因為有使用積分扣了120塊，實際要支付的運費只有30塊！！真的便宜到讓我好吃驚啊，確認一下自己都沒選錯之後就送出開始付費吧～
-                  </p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/2-5.jpg"></div>
-                <blockquote>
-                  <p>29. 立即支付30元的轉運費用。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137860_846794dcb9_h.jpg"></div>
-                <blockquote>
-                  <p>30. 填寫完整信用卡資訊。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137620_931d085d3c_h.jpg"></div>
-                <blockquote>
-                  <p>31. 處理完轉運之後，這筆單就會跑到轉運單項目中。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137390_f2f331d2aa_h.jpg"><br>
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137200_e35bfb348b_h.jpg"></div>
-                <blockquote>
-                  <p>32. 6/9處理完轉運單，顯示6/12號準備送貨，實際我在6/13號下午就已經收到redline了。</p>
-                </blockquote>
-                <div style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
-                  <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965136990_245c4aa1c4_h.jpg"></div>
-                <blockquote>
-                  <p>
-                    雖然我放了很多圖（因為我想盡可能詳細一點比較不會出錯），但其實整個步驟很簡單，加上就是繁體中文介面應該不會有什麼問題，其實認識了Buyandship我也不知道究竟是好事還是壞事，因為現在逛國外網站，完全沒在管有沒有直寄台灣了啊～～～～沒有直寄台灣沒關係，我有Buyandship(hug~~~~~)
-                  </p>
-                  <hr>
-                  <p style="text-align: left;"><span style="text-decoration: underline;">＊小編貼心小叮嚀：</span></p>
-                  <p>如果會員寶寶填寫海外倉庫地址時，遇到顯示 「無法輸入英文文字與數字之外的符號」，建議可以將地址填寫方式改為以下：</p>
-                  <p><strong>Address（Line 1）: ROOM E1 BIG YELLOW SELF STORAGE</strong><br>
-                    <strong>Address (Line 2）:&nbsp; 8 RODNEY ROAD</strong></p>
-                </blockquote>
-                <p>&nbsp;</p>
-                <blockquote>
-                  <p><img draggable="false" class="emoji" alt="🔗" src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">到<a href="https://www.en.redline-boutique.com/" target="_blank" rel="noopener"><strong>法國官網
-                    Redline</strong></a>購買，小資入手你的第一顆鑽石！</p>
-                  <p><img draggable="false" class="emoji" alt="🔗" src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">Buyandship<strong>英國倉庫、義大利倉庫</strong>幫你代收代運：<strong><a
-                    href="https://www.buyandship.com.tw/login" target="_blank"
-                    rel="noopener">馬上註冊拿地址，再送你120元運費抵用金</a>！</strong>會員<a href="http://bit.ly/2LvmqtG" target="_blank" rel="noopener"><strong>推薦朋友註冊</strong></a>成功並完成一次代運，兩人都能再得200元喔！</p>
-                  <p><img draggable="false" class="emoji" alt="🔗" src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">同場加映:<a href="https://www.buyandship.com.tw/blog/2019/08/03/%e3%80%90pandora%e3%80%91%e4%be%86%e8%87%aa%e5%8c%97%e6%ad%90%e7%9a%84%e8%bc%95%e5%a5%a2%e7%8f%a0%e5%af%b6%e6%89%93%e9%80%a0%e5%a6%b3%e7%9a%84%e5%b0%88%e5%b1%ac%e9%ad%85%e5%8a%9b-%e5%81%b7%e5%81%b7/" target="_blank" rel="noopener"><strong>【PANDORA】來自北歐的輕奢珠寶打造妳的專屬魅力 五折入手就是要迷倒你</strong></a></p>
-                </blockquote>
-                <p style="text-align: center;"><a href="http://bit.ly/2KXSPYE" target="_blank" rel="noopener"><img class="alignnone wp-image-62819" src="https://www.buyandship.com.tw/contents/uploads/2018/08/38183346_10211598408227384_8908588772719853568_n-150x150.jpg" alt="" width="47" height="47"></a>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="http://bit.ly/2KXSPYE" target="_blank" rel="noopener"><img class="wp-image-111469 alignnone" src="https://www.buyandship.com.tw/contents/uploads/2018/07/facebook.png" alt="" width="47" height="47"></a>&nbsp; &nbsp; &nbsp;<a href="http://bit.ly/2vqWVig" target="_blank" rel="noopener"><img class="alignnone" src="https://www.buyandship.com.tw/contents/uploads/2018/06/instagram-500x380.jpg" alt="https://www.buyandship.com.tw/contents/uploads/2018/06/instagram-500x380.jpg" width="60" height="47"></a></p>
-              </div>
-            </div>
-            <p>&nbsp;</p>
-            <div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
-              <div style="display: flex; flex-direction: column; width: 100%;">
-                <hr align="center" size="8px" width="100%">
-                <blockquote>
-                  <p>猜你想看其他<a href="https://goo.gl/CPnpx3" target="_blank" rel="noopener">【網友分享】</a>網購教學</p>
-                  <ul>
-                    <li><a href="https://goo.gl/Qrw1rr" target="_blank" rel="noopener">【影片｜不用找代購也能輕鬆買】</a>我的戰利品開箱 ft.
-                      BuyandShip國際網購代運教學</li>
-                    <li><a href="https://goo.gl/Z9vteT" target="_blank" rel="noopener">【影片｜Juvia’s Place &amp;
-                        ZOEVA眼影開箱】</a>如何購買Cult Beauty、代運Buyandship使用心得</li>
-                    <li><a href=" https://goo.gl/SB5G6k " target="_blank" rel="noopener">【美國amazon網購教學】</a>BuyandShip國際代運x
-                      Amazon 國外網購不必靠代購了</li>
-                    <li><a href=" https://goo.gl/s4n3ZE " target="_blank" rel="noopener">【美國COLOURPOP網購教學】</a>國外網站很難買!?教你集運輕鬆購買『BuyandShip國際網購代運』</li>
-                    <li><a href="https://www.buyandship.com.tw/blog/2019/08/27/%e3%80%90%e5%be%b7%e9%ad%af%e7%b4%8d%e9%85%92%e5%ba%97%e3%80%91/" target="_blank" rel="noopener">【德魯納酒店】</a> 集仙氣與霸氣於一身的滿月社長穿搭集 必買類似款大公開</li>
-                    <li><a href="https://www.buyandship.com.tw/blog/2019/05/21/%e3%80%90%e7%be%a9%e5%a4%a7%e5%88%a9%e5%85%ad%e5%a4%a7%e5%bf%85%e8%b2%b7%e8%bc%95%e5%a5%a2%e5%8c%85%e3%80%91%e5%83%b9%e6%a0%bc%e5%8f%af%e6%84%9b%e3%80%81%e6%99%82%e5%b0%9a%e8%a8%ad%e8%a8%88%e9%ab%98/" target="_blank" rel="noopener">【義大利買起來】</a>小資女奢華必敗！六大必買輕奢品牌</li>
-                  </ul>
-                </blockquote>
-              </div>
-            </div>
-
-
-            <hr>
-            <div class="text-center">
-              <p><a href="http://bit.ly/2A2qrR6" target="blank"><img src="https://www.buyandship.com.tw/contents/uploads/2018/07/2018.02.27-article-header-2a_meitu_2.jpg" width="100%" style="max-width:800px;"></a></p>
-            </div>
-            <blockquote>
-              <p>Buyandship到底在幹嘛？</p>
-              <p>
-                當你在海外網站購物時，可以將戰利品寄到我們在海外各地的倉庫，讓我們替你轉運／集運回家，<br>省下昂貴的國際運費，多國貨件免費合併，貨況即時回報好安心！<br>注意：Buyandship實重實收好佛心，沒有在跟你算材積的！
-          </p>
             </blockquote>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <p><a href="http://bit.ly/2A2qrR6" target="blank"><img src="/contents/uploads/2019/01/TW_blogpost-footer-03.png" width="100%"></a></p>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <p><a href="http://bit.ly/2Rt682l" target="blank"><img src="/contents/uploads/2019/01/TW_blogpost-footer-04.png" width="100%"></a></p>
-              </div>
-            </div>
-            <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://www.buyandship.com.tw/blog/2019/09/17/%e3%80%90%e6%b3%95%e5%9c%8bredline%e5%b0%8f%e7%b4%85%e7%b9%a9%e7%b6%b2%e8%b3%bc%e3%80%91%e8%b6%85%e6%84%9f%e8%ac%9d%e5%87%ba%e8%b2%a8%e5%bf%ab%e9%81%8b%e8%b2%bb%e5%8f%88%e4%be%bf%e5%ae%9c%e7%9a%84buya/" data-numposts="5" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=778362808998189&amp;container_width=870&amp;height=100&amp;href=https%3A%2F%2Fwww.buyandship.com.tw%2Fblog%2F2019%2F09%2F17%2F%25e3%2580%2590%25e6%25b3%2595%25e5%259c%258bredline%25e5%25b0%258f%25e7%25b4%2585%25e7%25b9%25a9%25e7%25b6%25b2%25e8%25b3%25bc%25e3%2580%2591%25e8%25b6%2585%25e6%2584%259f%25e8%25ac%259d%25e5%2587%25ba%25e8%25b2%25a8%25e5%25bf%25ab%25e9%2581%258b%25e8%25b2%25bb%25e5%258f%2588%25e4%25be%25bf%25e5%25ae%259c%25e7%259a%2584buya%2F&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;width=550">
-              <span style="vertical-align: bottom; width: 550px; height: 179px;"><iframe name="f19da901d347c44"
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965154370_85d41473ef_h.jpg"><br>
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058418474_160120d230_h.jpg"></div>
+            <blockquote>
+              <p>簡單分享幾張實戴照。單戴的樣子。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42726093492_80611ba0d1_h.jpg"></div>
+            <blockquote>
+              <p>因為redline的設計很簡單，就算同時戴手錶也不覺得多餘或累贅。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42058417534_e2f6f78baa_h.jpg"><br>
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965159410_0040b901b4_h.jpg"></div>
+            <blockquote>
+              <p>
+                當初看上這條redline，其實跟當時的男朋友（就是現在的老公）提過滿多次想買的，他倒是沒阻止過我，但我自己猶豫很久，一部分是因為除了手錶跟包包之外，我不曾在飾品上花這麼多錢，（就illusion這最經典簡單的款式都要一萬左右）
+              </p>
+              <p>
+                再來是後來有了小孩，又很怕寶寶把redline扯壞，（雖說訴求可承受80公斤的拉力，但還是會怕XDDD），一拖就拖了好久，這次是剛好今年生日快到了，老公問我想要什麼禮物，我不假思索還是提了redline，就決定開始研究購買方式了。
+              </p>
+              <p>
+                redline在台灣其實已經有設櫃了，但根據過往比價經驗，台灣代理商的價格通常讓我覺得不合理，所以我直接就上redline官網研究，一看發現哎呦好貼心竟然可以切換成簡體中文介面，也可以直接配送台灣耶！但這條redline我最後是決定透過代運的方式，而不是直寄台灣，以下是我考量的幾個原因：
+              </p>
+              <p>1.
+                雖然我以前有過直接在國外網站購買的經驗，但不管買過幾次還是會怕東西丟包，如果丟包超級麻煩！考驗英文能力不說，也不知道國外網站客服能協助到什麼程度可是透過代運公司，配送全程都是透明化，到國外倉庫、到香港倉庫、準備轉運寄出任何進度都相當清楚，而且隨時都有中文客服人員可以幫忙解決，整個很安心放心！
+              </p>
+              <p>2. 常在國外網站買東西的都知道，2018年起買超過2000元就會被課關稅，這點Buyandship在台灣報關時會貼心的幫忙“處理”一下，所以我這次…..恩，PASS</p>
+              <p>3. Buyandship有提供貨件保價服務，只要付出申報價格的3%費用，便可獲得最多 1,000美元（或按匯率的同等價格外幣）的賠償金額，所以就算東西遺失也不怕，買更高單價的精品也覺得有保障。</p>
+              <p>
+                就是以上幾個原因，讓我最後選擇代運公司而不是直寄台灣，而且我原本以為透過代運公司會更久一點才收到，結果我6/1下單，6/13就收到實品了，工作天才七天而已耶！！！真是太出乎我意料了講完了心路歷程，就來分享購物教學囉。
+              </p>
+              <p>1. 先上Buyandship代運網站註冊會員。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875289185_4d22691b99_h.jpg"></div>
+            <blockquote>
+              <p>2. 填寫完資料就註冊成功了。（對不起這兩個步驟好像有點廢因為是繁體中文XDDD）</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875288895_2d20d4c458_h.jpg"></div>
+            <blockquote>
+              <p>3. 上redline網站，在左上角可以選擇國旗，切換成簡體中文介面。（建議可以先註冊會員）</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875288575_4912a3febb_h.jpg"></div>
+            <blockquote>
+              <p>4. 挑選自己喜歡的款式。我是進入TIMELESS分類選擇illusion款式。（其實還有寶寶款redline我也有點心動XDD）</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/42726090442_8fd36ab954_h.jpg"></div>
+            <blockquote>
+              <p>5. 再來選擇想要的設計，有半繩半鍊，也有雙鍊或是多顆鑽石的，我選最簡單的單鑽、單紅繩的設計。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147940_1e0a300c10_h.jpg"></div>
+            <blockquote>
+              <p>6. 進到頁面之後，還有更客製化的選項。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147590_d5fb0df3f8_h.jpg"></div>
+            <blockquote>
+              <p>
+                可以選擇金屬部分顏色、手鍊長度和繩子的顏色，根據自己喜好搭配。（買之前我特別量過自己手腕，大概15.5公分，我怕戴得太緊所以挑16.5公分，而redline有三孔可以微調長度，我是扣第二個孔，提供給大家挑選尺寸參考）
+              </p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 60%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965147060_de9460a0c7_c-1.jpg"></div>
+            <blockquote>
+              <p>7. 都挑選好自己想要的設計之後點選『添加到購物車』就進到下圖購物車頁面。再確認一下自己挑的商品、數量是否正確。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965146750_6c52a51a61_h.jpg"></div>
+            <blockquote>
+              <p>此時也會列出自己購買的商品金額及增值稅，和小計金額。 確認沒錯就勇敢按下『進行結帳』！</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965146310_fc115693c0_h.jpg"></div>
+            <blockquote>
+              <p>8. 再來會進到結帳頁面，準備填寫自己的帳單資料。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145940_e5bb1ba06a_h.jpg"></div>
+            <blockquote>
+              <p>9. 因為我是選擇代運公司，所以在填寫相關賬單、寄送資料時我就去打開Buyandship網站。登入後進入會員中心會有個『海外倉庫地址』。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145430_e2afafdf8c_h.jpg"></div>
+            <blockquote>
+              <p>10. 在海外倉庫地址這邊，有幾個國家的倉庫可選擇。redline在法國，所以我選同樣在歐洲的英國倉庫。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965145030_4cd4ebf2d3_h.jpg"></div>
+            <blockquote>
+              <p>11. 選擇倉庫之後就會有更詳細的資訊。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965144560_3e7e70f448_h.jpg"></div>
+            <blockquote>
+              <p>12. 為了怕複製貼錯，我是建議可以將Buyandship倉庫資訊的視窗跟redline要填資料的視窗放左右比對顯示。名字可以寫自己的名字翻譯，姓氏我則填上Buyandship給的TW開頭的用戶碼。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965144150_e3e642b914_h.jpg"></div>
+            <blockquote>
+              <p>13. 地址、城市、郵遞區號、電話就照著Buyandship給的一一填上即可。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965143820_221523b7e3_c.jpg"></div>
+            <blockquote>
+              <p>14. 填完之後選下一步，會出現下圖讓你再重複確認一次。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965143440_775c8f7735_h.jpg"></div>
+            <blockquote>
+              <p>15. 運送方式我是選擇比較便宜的FedEx。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875283855_0b3038b89c_h.jpg"></div>
+            <blockquote>
+              <p>16. 支付方式選擇信用卡。再點選『繼續』。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875283445_fb71137345_h.jpg"></div>
+            <blockquote>
+              <p>17. 這裡會將運費也列出來再小計一次。同時也最後再確認一下自己的收件資訊是否正確。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282945_a70855643c_h.jpg"></div>
+            <blockquote>
+              <p>18. 接著跳出信用卡支付視窗，勇敢的填下去吧！</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282545_ee7e9d6654_h.jpg"></div>
+            <blockquote>
+              <p>19. 勇敢地填完之後會自動跳轉回redline官網顯示購買完成，同步我的手機也收到了刷卡成功的簡訊了（煙）。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/41875282125_91b3e71c67_h.jpg"></div>
+            <blockquote>
+              <p>20.
+                redline官網購買完畢之後就可以關掉了，接下來重點開始放在Buyandship，購買完畢之後可以先去Buyandship網站，登入會員，進入會員中心，在『收貨地址管理』項目中先輸入自己在台灣的收件資訊。
+              </p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965141060_196be1da1f_h.jpg"></div>
+            <blockquote>
+              <p>21. 接著隔一兩天，會收到由redline網站發出的通知信，告知商品已透過FedEx寄出。此時就再去Buyandship網站登入，進入會員中心的『貨件申報管理』中填寫資料。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965140640_223b2a4290_h.jpg"></div>
+            <blockquote>
+              <p>22. 同樣的，為了怕複製貼錯，我將Email信箱跟貨件申報管理視窗開左右比照，倉庫就選擇自己當時挑選的倉庫，我是選英國倉庫，貨運公司是FedEx，貨物追蹤編號就看Email中的『Tracking#』。
+              </p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965140340_af5c517b12_h.jpg"></div>
+            <blockquote>
+              <p>23. 產品資料也要填，沒填寫資料送不出去喔。填完之後再點擊『提交』即可。 這個地方就是我前文提到可以選擇額外購買3%遺失保價服務，購買商品單價高的建議勾選囉。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965139750_fe57e1ef7d_h.jpg"></div>
+            <blockquote>
+              <p>24. 再來就會出現下圖，確認一下自己申報的貨件資訊有沒有錯。沒錯就點擊『以上資料正確及提交』。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965139390_d654fbefa3_h.jpg"></div>
+            <blockquote>
+              <p>25. 申報完之後，就可以時不時來看一下商品的配送進度。6/1 redline官網下單，6/2我就收到出貨通知，當天上Buyandship網站申報。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138940_cea17f8f51_h.jpg"></div>
+            <blockquote>
+              <p>26. 再登入看的時候，顯示6/9已經在香港倉庫。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138310_59750876f4_c.jpg"></div>
+            <blockquote>
+              <p>27. 到香港倉庫之後，需要開始轉運，這時就勾選你已經申報的貨件進行合併。挑選取貨方式：我是挑選台灣住家地址。這時有120元的積分可以使用，直接勾選吧！再來選付轉運費的方式～</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965138130_91d5230f36_h.jpg"></div>
+            <blockquote>
+              <p>28.
+                Buyandship運費計算方式，1磅是150元台幣，redline很輕不到一磅，以一磅計算是150元，但因為有使用積分扣了120塊，實際要支付的運費只有30塊！！真的便宜到讓我好吃驚啊，確認一下自己都沒選錯之後就送出開始付費吧～
+              </p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;" src="https://www.buyandship.com.tw/contents/uploads/2018/06/2-5.jpg"></div>
+            <blockquote>
+              <p>29. 立即支付30元的轉運費用。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137860_846794dcb9_h.jpg"></div>
+            <blockquote>
+              <p>30. 填寫完整信用卡資訊。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137620_931d085d3c_h.jpg"></div>
+            <blockquote>
+              <p>31. 處理完轉運之後，這筆單就會跑到轉運單項目中。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137390_f2f331d2aa_h.jpg"><br>
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965137200_e35bfb348b_h.jpg"></div>
+            <blockquote>
+              <p>32. 6/9處理完轉運單，顯示6/12號準備送貨，實際我在6/13號下午就已經收到redline了。</p>
+            </blockquote>
+            <div
+              style="margin-top: 1em; display: flex; justify-content: space-around; align-items: center; align-self: center; flex-direction: column; width: 100%;">
+              <img style="width: 100%;"
+                src="https://www.buyandship.com.tw/contents/uploads/2018/06/40965136990_245c4aa1c4_h.jpg"></div>
+            <blockquote>
+              <p>
+                雖然我放了很多圖（因為我想盡可能詳細一點比較不會出錯），但其實整個步驟很簡單，加上就是繁體中文介面應該不會有什麼問題，其實認識了Buyandship我也不知道究竟是好事還是壞事，因為現在逛國外網站，完全沒在管有沒有直寄台灣了啊～～～～沒有直寄台灣沒關係，我有Buyandship(hug~~~~~)
+              </p>
+              <hr>
+              <p style="text-align: left;"><span style="text-decoration: underline;">＊小編貼心小叮嚀：</span></p>
+              <p>如果會員寶寶填寫海外倉庫地址時，遇到顯示 「無法輸入英文文字與數字之外的符號」，建議可以將地址填寫方式改為以下：</p>
+              <p><strong>Address（Line 1）: ROOM E1 BIG YELLOW SELF STORAGE</strong><br>
+                <strong>Address (Line 2）:&nbsp; 8 RODNEY ROAD</strong></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <blockquote>
+              <p><img draggable="false" class="emoji" alt="🔗"
+                  src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">到<a
+                  href="https://www.en.redline-boutique.com/" target="_blank" rel="noopener"><strong>法國官網
+                    Redline</strong></a>購買，小資入手你的第一顆鑽石！</p>
+              <p><img draggable="false" class="emoji" alt="🔗"
+                  src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">Buyandship<strong>英國倉庫、義大利倉庫</strong>幫你代收代運：<strong><a
+                    href="https://www.buyandship.com.tw/login" target="_blank"
+                    rel="noopener">馬上註冊拿地址，再送你120元運費抵用金</a>！</strong>會員<a href="http://bit.ly/2LvmqtG" target="_blank"
+                  rel="noopener"><strong>推薦朋友註冊</strong></a>成功並完成一次代運，兩人都能再得200元喔！</p>
+              <p><img draggable="false" class="emoji" alt="🔗"
+                  src="https://s.w.org/images/core/emoji/11/svg/1f517.svg">同場加映:<a
+                  href="https://www.buyandship.com.tw/blog/2019/08/03/%e3%80%90pandora%e3%80%91%e4%be%86%e8%87%aa%e5%8c%97%e6%ad%90%e7%9a%84%e8%bc%95%e5%a5%a2%e7%8f%a0%e5%af%b6%e6%89%93%e9%80%a0%e5%a6%b3%e7%9a%84%e5%b0%88%e5%b1%ac%e9%ad%85%e5%8a%9b-%e5%81%b7%e5%81%b7/"
+                  target="_blank" rel="noopener"><strong>【PANDORA】來自北歐的輕奢珠寶打造妳的專屬魅力 五折入手就是要迷倒你</strong></a></p>
+            </blockquote>
+            <p style="text-align: center;"><a href="http://bit.ly/2KXSPYE" target="_blank" rel="noopener"><img
+                  class="alignnone wp-image-62819"
+                  src="https://www.buyandship.com.tw/contents/uploads/2018/08/38183346_10211598408227384_8908588772719853568_n-150x150.jpg"
+                  alt="" width="47" height="47"></a>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a
+                href="http://bit.ly/2KXSPYE" target="_blank" rel="noopener"><img class="wp-image-111469 alignnone"
+                  src="https://www.buyandship.com.tw/contents/uploads/2018/07/facebook.png" alt="" width="47"
+                  height="47"></a>&nbsp; &nbsp; &nbsp;<a href="http://bit.ly/2vqWVig" target="_blank"
+                rel="noopener"><img class="alignnone"
+                  src="https://www.buyandship.com.tw/contents/uploads/2018/06/instagram-500x380.jpg"
+                  alt="https://www.buyandship.com.tw/contents/uploads/2018/06/instagram-500x380.jpg" width="60"
+                  height="47"></a></p>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
+          <div style="display: flex; flex-direction: column; width: 100%;">
+            <hr align="center" size="8px" width="100%">
+            <blockquote>
+              <p>猜你想看其他<a href="https://goo.gl/CPnpx3" target="_blank" rel="noopener">【網友分享】</a>網購教學</p>
+              <ul>
+                <li><a href="https://goo.gl/Qrw1rr" target="_blank" rel="noopener">【影片｜不用找代購也能輕鬆買】</a>我的戰利品開箱 ft.
+                  BuyandShip國際網購代運教學</li>
+                <li><a href="https://goo.gl/Z9vteT" target="_blank" rel="noopener">【影片｜Juvia’s Place &amp;
+                    ZOEVA眼影開箱】</a>如何購買Cult Beauty、代運Buyandship使用心得</li>
+                <li><a href=" https://goo.gl/SB5G6k " target="_blank" rel="noopener">【美國amazon網購教學】</a>BuyandShip國際代運x
+                  Amazon 國外網購不必靠代購了</li>
+                <li><a href=" https://goo.gl/s4n3ZE " target="_blank"
+                    rel="noopener">【美國COLOURPOP網購教學】</a>國外網站很難買!?教你集運輕鬆購買『BuyandShip國際網購代運』</li>
+                <li><a
+                    href="https://www.buyandship.com.tw/blog/2019/08/27/%e3%80%90%e5%be%b7%e9%ad%af%e7%b4%8d%e9%85%92%e5%ba%97%e3%80%91/"
+                    target="_blank" rel="noopener">【德魯納酒店】</a> 集仙氣與霸氣於一身的滿月社長穿搭集 必買類似款大公開</li>
+                <li><a
+                    href="https://www.buyandship.com.tw/blog/2019/05/21/%e3%80%90%e7%be%a9%e5%a4%a7%e5%88%a9%e5%85%ad%e5%a4%a7%e5%bf%85%e8%b2%b7%e8%bc%95%e5%a5%a2%e5%8c%85%e3%80%91%e5%83%b9%e6%a0%bc%e5%8f%af%e6%84%9b%e3%80%81%e6%99%82%e5%b0%9a%e8%a8%ad%e8%a8%88%e9%ab%98/"
+                    target="_blank" rel="noopener">【義大利買起來】</a>小資女奢華必敗！六大必買輕奢品牌</li>
+              </ul>
+            </blockquote>
+          </div>
+        </div>
+
+
+        <hr>
+        <div class="text-center">
+          <p><a href="http://bit.ly/2A2qrR6" target="blank"><img
+                src="https://www.buyandship.com.tw/contents/uploads/2018/07/2018.02.27-article-header-2a_meitu_2.jpg"
+                width="100%" style="max-width:800px;"></a></p>
+        </div>
+        <blockquote>
+          <p>Buyandship到底在幹嘛？</p>
+          <p>
+            當你在海外網站購物時，可以將戰利品寄到我們在海外各地的倉庫，讓我們替你轉運／集運回家，<br>省下昂貴的國際運費，多國貨件免費合併，貨況即時回報好安心！<br>注意：Buyandship實重實收好佛心，沒有在跟你算材積的！
+          </p>
+        </blockquote>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <p><a href="http://bit.ly/2A2qrR6" target="blank"><img
+                  src="/contents/uploads/2019/01/TW_blogpost-footer-03.png" width="100%"></a></p>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <p><a href="http://bit.ly/2Rt682l" target="blank"><img
+                  src="/contents/uploads/2019/01/TW_blogpost-footer-04.png" width="100%"></a></p>
+          </div>
+        </div>
+        <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
+          data-href="https://www.buyandship.com.tw/blog/2019/09/17/%e3%80%90%e6%b3%95%e5%9c%8bredline%e5%b0%8f%e7%b4%85%e7%b9%a9%e7%b6%b2%e8%b3%bc%e3%80%91%e8%b6%85%e6%84%9f%e8%ac%9d%e5%87%ba%e8%b2%a8%e5%bf%ab%e9%81%8b%e8%b2%bb%e5%8f%88%e4%be%bf%e5%ae%9c%e7%9a%84buya/"
+          data-numposts="5" fb-xfbml-state="rendered"
+          fb-iframe-plugin-query="app_id=778362808998189&amp;container_width=870&amp;height=100&amp;href=https%3A%2F%2Fwww.buyandship.com.tw%2Fblog%2F2019%2F09%2F17%2F%25e3%2580%2590%25e6%25b3%2595%25e5%259c%258bredline%25e5%25b0%258f%25e7%25b4%2585%25e7%25b9%25a9%25e7%25b6%25b2%25e8%25b3%25bc%25e3%2580%2591%25e8%25b6%2585%25e6%2584%259f%25e8%25ac%259d%25e5%2587%25ba%25e8%25b2%25a8%25e5%25bf%25ab%25e9%2581%258b%25e8%25b2%25bb%25e5%258f%2588%25e4%25be%25bf%25e5%25ae%259c%25e7%259a%2584buya%2F&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;width=550">
+          <span style="vertical-align: bottom; width: 550px; height: 179px;"><iframe name="f19da901d347c44"
               width="550px" height="100px" title="fb:comments Facebook Social Plugin" frameborder="0"
               allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media"
               src="https://www.facebook.com/plugins/comments.php?app_id=778362808998189&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df294a458ae1660c%26domain%3Dwww.buyandship.com.tw%26origin%3Dhttps%253A%252F%252Fwww.buyandship.com.tw%252Ff30c65f54baf844%26relation%3Dparent.parent&amp;container_width=870&amp;height=100&amp;href=https%3A%2F%2Fwww.buyandship.com.tw%2Fblog%2F2019%2F09%2F17%2F%25e3%2580%2590%25e6%25b3%2595%25e5%259c%258bredline%25e5%25b0%258f%25e7%25b4%2585%25e7%25b9%25a9%25e7%25b6%25b2%25e8%25b3%25bc%25e3%2580%2591%25e8%25b6%2585%25e6%2584%259f%25e8%25ac%259d%25e5%2587%25ba%25e8%25b2%25a8%25e5%25bf%25ab%25e9%2581%258b%25e8%25b2%25bb%25e5%258f%2588%25e4%25be%25bf%25e5%25ae%259c%25e7%259a%2584buya%2F&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;width=550"
               style="border: none; visibility: visible; width: 550px; height: 179px;" class=""></iframe></span></div>
 
-          </div>
-        </div>
-        <div class="bs-blog__sidebar">
-          <ul class="bs-blog__sidebar__category">
-            <li class="bs-blog__sidebar__category__title text-h6">文章分類</li>
-            <li class="bs-blog__sidebar__category__item">
-              <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                BlackFriday黑五血拚特輯
-              </a>
-              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-            </li>
-            <li class="bs-blog__sidebar__category__item">
-              <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                BlackFriday黑五血拚特輯
-              </a>
-              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-            </li>
-            <li class="bs-blog__sidebar__category__item">
-              <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                BNS調查報告
-              </a>
-              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-            </li>
-            <li class="bs-blog__sidebar__category__item">
-              <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                網友分享
-              </a>
-              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-              <ul class="bs-blog__sidebar__category__item_children">
-                <li class="bs-blog__sidebar__category__item">
-                  <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                    影片分享
-                  </a>
-                  <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-                </li>
-                <li class="bs-blog__sidebar__category__item">
-                  <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                    日本線網友分享
-                  </a>
-                  <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-                </li>
-              </ul>
-            </li>
-            <li class="bs-blog__sidebar__category__item">
-              <a class="bs-blog__sidebar__category__item__title text-caption" href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
-                網店購物教學
-              </a>
-              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
-            </li>
-          </ul>
-          <ul class="bs-blog__sidebar__recent">
-            <li class="bs-blog__sidebar__recent__title text-h6">最新文章</li>
-            <li class="bs-blog__sidebar__recent__item">
-              <a class="bs-blog__sidebar__recent__item__title text-caption" href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
-                【史上最狂價差】一指神功買到4折 Superdry 密技！不學習太可惜😱
-              </a>
-              <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
-            </li>
-            <li class="bs-blog__sidebar__recent__item">
-              <a class="bs-blog__sidebar__recent__item__title text-caption" href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
-                【折扣情報站】英國 Joseph Joseph 餐廚用品最低4折起 打造你最時髦的人性化廚房
-              </a>
-              <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
-            </li>
-            <li class="bs-blog__sidebar__recent__item">
-              <a class="bs-blog__sidebar__recent__item__title text-caption" href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
-                【Fitflop】英國知名運動涼鞋品牌 Fitflop 精選鞋款低至5折起😍
-              </a>
-              <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </main>
-    <!-- WP:end -->
-
-    <footer class="bs-footer" v-cloak>
-      <div class="footer-graphic" v-if="isShowGraphic">
-        <picture>
-          <source media="(max-width: 1199px)" srcset="
-              /buyandshipdemo/assets/img/footer_768px.png 1x,
-              /buyandshipdemo/assets/img/footer_768px@2x.png 2x,
-              /buyandshipdemo/assets/img/footer_768px@3x.png 3x
-            " sizes="100vw">
-          <source media="(min-width: 1200px)" srcset="
-              /buyandshipdemo/assets/img/footer_1440px.png 1440w,
-              /buyandshipdemo/assets/img/footer_1440px@2x.png 2880w,
-              /buyandshipdemo/assets/img/footer_1440px@3x.png 4320w
-            " sizes="100vw">
-          <img class="footer-graphic-media" src="/buyandshipdemo/assets/img/footer_1440px.png" alt="cat is shipping">
-        </picture>
       </div>
-      <div class="bs-container">
-        <a-row class="footer-nav" :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
-          <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">購物</div>
-            <div class="footer-nav-group-item">
-              <a href="/blog-list">發燒話題</a>
-            </div>
-            <div class="footer-nav-group-item">
-              <a href="/blog-list">最新消息</a>
-            </div>
-          </a-col>
-          <a-col class="footer-nav-group" :xs="24" :md="3" :xl="6">
-            <div class="footer-nav-group-label">代運</div>
-            <div class="footer-nav-group-item">
-              <a href="/tutorial">使用教學</a>
-            </div>
-            <div class="footer-nav-group-item">
-              <a href="/pricing">運費計算</a>
-            </div>
-            <div class="footer-nav-group-item">
-              <a href="/advantage">我們的優勢</a>
-            </div>
-          </a-col>
-          <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
-            <div class="footer-nav-group-label">關於</div>
-            <div class="footer-nav-group-item">
-              <a href="/about-us">關於我們</a>
-            </div>
-            <div class="footer-nav-group-item">
-              <a href="/warehouses">海外倉庫一覽</a>
-            </div>
-            <div class="footer-nav-group-item">
-              <a href="/contact-us">聯絡我們</a>
-            </div>
-          </a-col>
-          <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
-            <div class="footer-social">
-              <div class="footer-social-box">
-                <a class="footer-social-box-link" href="https://www.facebook.com/buyandship.com.tw">
-                  <i class="bs-icon">
-                    <span class="bs-icon-facebook"></span>
-                  </i>
-                </a>
-                <a class="footer-social-box-link" href="https://www.instagram.com/buyandship.tw">
-                  <i class="bs-icon">
-                    <span class="bs-icon-instagram"></span>
-                  </i>
-                </a>
-                <a class="footer-social-box-link" href="https://www.youtube.com/channel/UCyoFLixf25b55MuiDaGgtvA">
-                  <i class="bs-icon">
-                    <span class="bs-icon-youtube"></span>
-                  </i>
-                </a>
-              </div>
-            </div>
-            <div class="footer-location">
-              <div class="footer-location-icon">
-                <i class="bs-icon-environment" style="margin-left: -6px;"></i>
-              </div>
-              <div class="footer-location-desc">總公司：新界葵芳葵豐街2-16號鍾意恆勝中心7樓706室</div>
-            </div>
-            <div class="footer-download">
-              <a class="footer-download-link" href="#">
-                <img class="footer-download-link-media" alt="AppStore" src="/buyandshipdemo/assets/img/AppStore_200px@2x.png" srcset="
-                    /buyandshipdemo/assets/img/AppStore_200px@2x.png 1x,
-                    /buyandshipdemo/assets/img/AppStore_200px@2x.png 2x,
-                    /buyandshipdemo/assets/img/AppStore_200px@3x.png 3x
-                  ">
+    </div>
+    <div class="bs-blog__sidebar">
+      <ul class="bs-blog__sidebar__category">
+        <li class="bs-blog__sidebar__category__title text-h6">文章分類</li>
+        <li class="bs-blog__sidebar__category__item">
+          <a class="bs-blog__sidebar__category__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+            BlackFriday黑五血拚特輯
+          </a>
+          <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+        </li>
+        <li class="bs-blog__sidebar__category__item">
+          <a class="bs-blog__sidebar__category__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+            BlackFriday黑五血拚特輯
+          </a>
+          <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+        </li>
+        <li class="bs-blog__sidebar__category__item">
+          <a class="bs-blog__sidebar__category__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+            BNS調查報告
+          </a>
+          <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+        </li>
+        <li class="bs-blog__sidebar__category__item">
+          <a class="bs-blog__sidebar__category__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+            網友分享
+          </a>
+          <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+          <ul class="bs-blog__sidebar__category__item_children">
+            <li class="bs-blog__sidebar__category__item">
+              <a class="bs-blog__sidebar__category__item__title text-caption"
+                href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+                影片分享
               </a>
-              <a class="footer-download-link" href="#">
-                <img class="footer-download-link-media" alt="GooglePlay" src="/buyandshipdemo/assets/img/GooglePlay_200px@2x.png" srcset="
-                    /buyandshipdemo/assets/img/GooglePlay_200px@2x.png 1x,
-                    /buyandshipdemo/assets/img/GooglePlay_200px@2x.png 2x,
-                    /buyandshipdemo/assets/img/GooglePlay_200px@3x.png 3x
-                  ">
+              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+            </li>
+            <li class="bs-blog__sidebar__category__item">
+              <a class="bs-blog__sidebar__category__item__title text-caption"
+                href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+                日本線網友分享
               </a>
-            </div>
-          </a-col>
-        </a-row>
-        <div class="footer-bottom">
-          <div class="footer-country">
-            <a class="footer-country-link" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
-              <i class="bs-icon-country"></i>
-              <span>台灣</span>
+              <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+            </li>
+          </ul>
+        </li>
+        <li class="bs-blog__sidebar__category__item">
+          <a class="bs-blog__sidebar__category__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/categories/blackfriday-shopping/">
+            網店購物教學
+          </a>
+          <span class="bs-blog__sidebar__category__item__counter text-caption">( 7 )</span>
+        </li>
+      </ul>
+      <ul class="bs-blog__sidebar__recent">
+        <li class="bs-blog__sidebar__recent__title text-h6">最新文章</li>
+        <li class="bs-blog__sidebar__recent__item">
+          <a class="bs-blog__sidebar__recent__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
+            【史上最狂價差】一指神功買到4折 Superdry 密技！不學習太可惜😱
+          </a>
+          <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
+        </li>
+        <li class="bs-blog__sidebar__recent__item">
+          <a class="bs-blog__sidebar__recent__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
+            【折扣情報站】英國 Joseph Joseph 餐廚用品最低4折起 打造你最時髦的人性化廚房
+          </a>
+          <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
+        </li>
+        <li class="bs-blog__sidebar__recent__item">
+          <a class="bs-blog__sidebar__recent__item__title text-caption"
+            href="https://www.buyandship.com.tw/blog/2019/11/14/%e3%80%90%e5%8f%b2%e4%b8%8a%e6%9c%80%e7%8b%82%e5%83%b9%e5%b7%ae%e3%80%91%e4%b8%80%e6%8c%87%e7%a5%9e%e5%8a%9f%e8%b2%b7%e5%88%b03%e6%8a%98superdry-%e5%af%86%e6%8a%80%e5%9c%a8%e9%80%99%e8%a3%a1/">
+            【Fitflop】英國知名運動涼鞋品牌 Fitflop 精選鞋款低至5折起😍
+          </a>
+          <span class="bs-blog__sidebar__recent__item__time text-caption">2019-11-14</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<script>
+window.onload = function() {
+  var pageJs = document.createElement('script')
+  pageJs.src = "../assets/js/blog-detail.js?05c77b82e57369e71167"
+  document.body.appendChild(pageJs)
+}
+</script>
+<!-- <script defer src="../assets/js/blog-detail.js?05c77b82e57369e71167"></script> -->
+
+<!-- WP:end -->
+
+<footer id="bsFooter" class="bs-footer" v-cloak>
+  <div class="footer-graphic" v-if="isShowGraphic">
+    <picture>
+      <source media="(max-width: 1199px)" srcset="
+          /assets/img/footer_768px.png 1x,
+          /assets/img/footer_768px@2x.png 2x,
+          /assets/img/footer_768px@3x.png 3x
+        " sizes="100vw">
+      <source media="(min-width: 1200px)" srcset="
+          /assets/img/footer_1440px.png 1440w,
+          /assets/img/footer_1440px@2x.png 2880w,
+          /assets/img/footer_1440px@3x.png 4320w
+        " sizes="100vw">
+      <img class="footer-graphic-media" src="/assets/img/footer_1440px.png" alt="cat is shipping">
+    </picture>
+  </div>
+  <div class="bs-container">
+    <a-row class="footer-nav" :gutter="{ xs: 0, md: 24, lg: 24 }" v-cloak>
+      <a-col class="footer-nav-group" :xs="24" :md="5" :xl="6">
+        <div class="footer-nav-group-label">購物</div>
+        <div class="footer-nav-group-item">
+          <a href="/blog-list/">發燒話題</a>
+        </div>
+        <div class="footer-nav-group-item">
+          <a href="/blog-list/">最新消息</a>
+        </div>
+      </a-col>
+      <a-col class="footer-nav-group" :xs="24" :md="5" :xl="6">
+        <div class="footer-nav-group-label">代運</div>
+        <div class="footer-nav-group-item">
+          <a href="/tutorial/">使用教學</a>
+        </div>
+        <div class="footer-nav-group-item">
+          <a href="/pricing/">運費計算</a>
+        </div>
+        <div class="footer-nav-group-item">
+          <a href="/advantage/">我們的優勢</a>
+        </div>
+      </a-col>
+      <a-col class="footer-nav-group" :xs="24" :md="5" :xl="6">
+        <div class="footer-nav-group-label">關於</div>
+        <div class="footer-nav-group-item">
+          <a href="/about-us/">關於我們</a>
+        </div>
+        <div class="footer-nav-group-item">
+          <a href="/warehouses/">海外倉庫一覽</a>
+        </div>
+        <div class="footer-nav-group-item">
+          <a href="/contact-us/">聯絡我們</a>
+        </div>
+      </a-col>
+      <a-col class="footer-nav-group" :xs="24" :md="9" :xl="6">
+        <div class="footer-social">
+          <div class="footer-social-box">
+            <a class="footer-social-box-link" href="https://www.facebook.com/buyandship.com.tw">
+              <i class="bs-icon">
+                <span class="bs-icon-facebook"></span>
+              </i>
+            </a>
+            <a class="footer-social-box-link" href="https://www.instagram.com/buyandship.tw">
+              <i class="bs-icon">
+                <span class="bs-icon-instagram"></span>
+              </i>
+            </a>
+            <a class="footer-social-box-link" href="https://www.youtube.com/channel/UCyoFLixf25b55MuiDaGgtvA">
+              <i class="bs-icon">
+                <span class="bs-icon-youtube"></span>
+              </i>
             </a>
           </div>
-          <div class="footer-copyright">
-            <span class="footer-copyright-desc"> © 2019 E-BUY Global Limited.</span>
-            <a class="footer-copyright-link" href="/terms">使用條款</a>
-            <a class="footer-copyright-link" href="/privacy">隱私政策</a>
-          </div>
         </div>
+        <div class="footer-location">
+          <div class="footer-location-icon">
+            <i class="bs-icon-environment" style="margin-left: -6px;"></i>
+          </div>
+          <div class="footer-location-desc">總公司：新界葵芳葵豐街2-16號鍾意恆勝中心7樓706室</div>
+        </div>
+        <div class="footer-download">
+          <a class="footer-download-link" href="#">
+            <img class="footer-download-link-media" alt="AppStore"
+              src="/assets/img/AppStore_200px@2x.png" srcset="
+                /assets/img/AppStore_200px@2x.png 1x,
+                /assets/img/AppStore_200px@2x.png 2x,
+                /assets/img/AppStore_200px@3x.png 3x
+              ">
+          </a>
+          <a class="footer-download-link" href="#">
+            <img class="footer-download-link-media" alt="GooglePlay"
+              src="/assets/img/GooglePlay_200px@2x.png" srcset="
+                /assets/img/GooglePlay_200px@2x.png 1x,
+                /assets/img/GooglePlay_200px@2x.png 2x,
+                /assets/img/GooglePlay_200px@3x.png 3x
+              ">
+          </a>
+        </div>
+      </a-col>
+    </a-row>
+    <div class="footer-bottom">
+      <div class="footer-country">
+        <a class="footer-country-link" href="javascript:;" @click.prevent="toggleNavPanel('country', true)">
+          <i class="bs-icon-country"></i>
+          <span>台灣</span>
+        </a>
       </div>
-    </footer>
-
+      <div class="footer-copyright">
+        <span class="footer-copyright-desc"> © 2019 E-BUY Global Limited.</span>
+        <a class="footer-copyright-link"
+          href="/terms/">使用條款</a>
+        <a class="footer-copyright-link"
+          href="/privacy/">隱私政策</a>
+      </div>
+    </div>
   </div>
-  <script src="/buyandshipdemo/assets/js/common.js?02b96dc10fd0998eed5c"></script>
-  <script src="/buyandshipdemo/assets/js/blog-detail.js?02b96dc10fd0998eed5c"></script>
+</footer>
+
+</div> <!-- end class="layout" -->
+
+<script src="../assets/js/common.js?05c77b82e57369e71167"></script>
+
 </body>
 
 </html>
+

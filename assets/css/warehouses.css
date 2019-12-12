@@ -97,6 +97,17 @@
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
+.bs-slideshow-scroll-inner:after {
+  content: '';
+  width: 16px;
+  height: 100%;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+.bs-slideshow-scroll-inner:after {
+    content: none;
+}
+}
 .bs-slideshow-item {
   min-width: 160px;
   width: 160px;
@@ -112,6 +123,7 @@
 }
 @media (min-width: 768px) {
 .bs-slideshow-item {
+    min-width: auto;
     height: 300px;
     margin: 0 12px;
 }
@@ -137,6 +149,9 @@
   line-height: 40px;
   background-color: #FFFFFF;
   border-radius: inherit;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (min-width: 768px) {
 .bs-slideshow-item-info {
@@ -167,8 +182,8 @@
 }
 .bs-card--horizontal .bs-card-desc {
   margin-top: 8px;
-  height: unset;
-  line-height: unset;
+  height: auto;
+  line-height: auto;
 }
 .bs-card--radius {
   border-radius: 5px;
@@ -192,6 +207,10 @@
 .bs-card--2:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.bs-card--2.bs-card--notHover:hover {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 .bs-card-media {
   padding-bottom: 82%;
@@ -221,8 +240,8 @@
   width: 100%;
   height: 216px;
   position: relative;
-  background-image: url(/buyandshipdemo/assets/img/banner/warehouses_m.png), -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#2694E5));
-  background-image: url(/buyandshipdemo/assets/img/banner/warehouses_m.png), linear-gradient(180deg, #FEFEFE 0%, #2694E5 100%);
+  background-image: url(/assets/img/banner/warehouses_m.png), -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#2694E5));
+  background-image: url(/assets/img/banner/warehouses_m.png), linear-gradient(180deg, #FEFEFE 0%, #2694E5 100%);
   background-repeat: no-repeat;
   background-size: auto 130px, initial;
   background-position: right 90%;
@@ -230,7 +249,7 @@
 @media (min-width: 768px) {
   .banner {
     height: 300px;
-    background-image: url(/buyandshipdemo/assets/img/banner/warehouses@2x.png);
+    background-image: url(/assets/img/banner/warehouses@2x.png);
     background-size: auto 300px;
     background-position: right top;
     background-color: rgba(38, 38, 38, 0.05);
@@ -239,7 +258,7 @@
 @media (min-width: 1200px) {
   .banner {
     height: 385px;
-    background-image: url(/buyandshipdemo/assets/img/banner/warehouses@3x.png);
+    background-image: url(/assets/img/banner/warehouses@3x.png);
     background-size: auto 385px;
   }
 }
@@ -322,23 +341,17 @@
   }
   .section--second .section-colunm .warehouse-media {
     width: 40%;
-    height: unset;
+    height: auto;
     border-radius: 5px 0 0 5px;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   }
   .section--second .section-colunm .warehouse-media-desc {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     height: 80px;
     line-height: 80px;
-    width: 100%;
     font-size: 34px;
+    font-weight: normal;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 0 0 5px;
-    color: #FFFFFF;
   }
   .section--second .section-colunm .bs-slideshow {
     width: 60%;
@@ -426,7 +439,20 @@
   border-radius: inherit;
 }
 .warehouse-media-desc {
-  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #FFFFFF;
+}
+.warehouse-media-desc-inner {
+  position: absolute;
+  left: 24px;
 }
 .warehouse-cover {
   width: 100%;

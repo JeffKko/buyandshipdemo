@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/buyandshipdemo";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -166,17 +166,19 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_js_main_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/assets/js/main.js */ "./src/assets/js/main.js");
-/* harmony import */ var _assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/assets/style/pages/faq.less */ "./src/assets/style/pages/faq.less");
-/* harmony import */ var _assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_js_utils_hybridPage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/assets/js/utils/hybridPage.js */ "./src/assets/js/utils/hybridPage.js");
+/* harmony import */ var _assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/assets/style/pages/faq.less */ "./src/assets/style/pages/faq.less");
+/* harmony import */ var _assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_style_pages_faq_less__WEBPACK_IMPORTED_MODULE_2__);
 
 
+
+Object(_assets_js_utils_hybridPage_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])();
+window.BsFooterVm.isShowGraphic = true;
 new _assets_js_main_js__WEBPACK_IMPORTED_MODULE_0__[/* Page */ "a"]({
-  el: '#app',
+  el: '#bsMain',
   components: {},
   data: function data() {
-    return {
-      isShowGraphic: true
-    };
+    return {};
   },
   mounted: function mounted() {},
   methods: {}

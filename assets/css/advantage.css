@@ -71,7 +71,7 @@
 }
 .bs-banner .bs-container {
   height: 100%;
-  background-image: url(/buyandshipdemo/assets/img/banner/benefits.png);
+  background-image: url(/assets/img/banner/benefits.png);
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: auto 130px;
@@ -79,14 +79,14 @@
 }
 @media (min-width: 768px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/benefits@2x.png);
+    background-image: url(/assets/img/banner/benefits@2x.png);
     background-size: auto 200px;
     background-position: 100% bottom;
   }
 }
 @media (min-width: 1200px) {
   .bs-banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/benefits@3x.png);
+    background-image: url(/assets/img/banner/benefits@3x.png);
     background-size: auto 346px;
   }
 }
@@ -115,12 +115,12 @@
   .bs-banner-title {
     max-width: 400px;
     top: 74px;
-    right: unset;
-    margin-left: unset;
-    margin-right: unset;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 34px;
     font-weight: normal;
-    text-align: unset;
+    text-align: left;
   }
 }
 .page-section {

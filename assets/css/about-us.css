@@ -97,6 +97,17 @@
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
+.bs-slideshow-scroll-inner:after {
+  content: '';
+  width: 16px;
+  height: 100%;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+.bs-slideshow-scroll-inner:after {
+    content: none;
+}
+}
 .bs-slideshow-item {
   min-width: 160px;
   width: 160px;
@@ -112,6 +123,7 @@
 }
 @media (min-width: 768px) {
 .bs-slideshow-item {
+    min-width: auto;
     height: 300px;
     margin: 0 12px;
 }
@@ -137,6 +149,9 @@
   line-height: 40px;
   background-color: #FFFFFF;
   border-radius: inherit;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (min-width: 768px) {
 .bs-slideshow-item-info {
@@ -184,7 +199,7 @@
 }
 @media (min-width: 1200px) {
   .bs-banner:after {
-    content: unset;
+    content: none;
   }
 }
 .bs-banner-title {
@@ -211,16 +226,16 @@
 @media (min-width: 1200px) {
   .bs-banner-title {
     height: 46px;
-    width: 450px;
+    width: 550px;
     font-size: 34px;
     letter-spacing: 0.25px;
     line-height: 46px;
     top: 72px;
     left: 0;
-    right: unset;
-    margin-left: unset;
-    margin-right: unset;
-    text-align: start;
+    right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
   }
 }
 .bs-banner-subtitle {
@@ -249,7 +264,7 @@
 .bs-banner-img {
   height: 100%;
   width: 100%;
-  background-image: url(/buyandshipdemo/assets/img/banner/TWN_office.png);
+  background-image: url(/assets/img/banner/TWN_office.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -262,15 +277,15 @@
 }
 @media (min-width: 768px) {
   .bs-banner-img {
-    background-image: url(/buyandshipdemo/assets/img/banner/TWN_office@2x.png);
+    background-image: url(/assets/img/banner/TWN_office@2x.png);
   }
 }
 @media (min-width: 1200px) {
   .bs-banner-img {
-    background-image: url(/buyandshipdemo/assets/img/banner/TWN_office@3x.png);
+    background-image: url(/assets/img/banner/TWN_office@3x.png);
     background-size: 100% 100%;
     width: 518px;
-    left: unset;
+    left: auto;
   }
 }
 .page-section__title {
@@ -351,6 +366,7 @@
 .page-section__saying__image1 {
   width: 100%;
   height: auto;
+  max-width: 370px;
 }
 @media (min-width: 1200px) {
   .page-section__saying__image1 {
@@ -361,6 +377,7 @@
 .page-section__saying__image2 {
   width: 100%;
   height: auto;
+  max-width: 370px;
 }
 @media (min-width: 1200px) {
   .page-section__saying__image2 {

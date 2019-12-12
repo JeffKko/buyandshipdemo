@@ -43,7 +43,8 @@
   max-width: 100%;
   height: 100%;
   white-space: nowrap;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   text-align: center;
   padding-left: 14px;
   padding-right: 14px;
@@ -187,10 +188,6 @@
 .bs-tab-inner:after {
     content: none;
 }
-.bs-tab-desc {
-    height: unset;
-    line-height: unset;
-}
 .bs-tab-icon {
     display: inline-block;
     width: 24px;
@@ -201,7 +198,7 @@
     height: 100%;
 }
 .bs-tab.bs-tab--fix {
-    width: unset;
+    width: auto;
 }
 }
 @media (min-width: 1200px) {
@@ -293,8 +290,8 @@
 }
 .bs-card--horizontal .bs-card-desc {
   margin-top: 8px;
-  height: unset;
-  line-height: unset;
+  height: auto;
+  line-height: auto;
 }
 .bs-card--radius {
   border-radius: 5px;
@@ -318,6 +315,10 @@
 .bs-card--2:hover {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.bs-card--2.bs-card--notHover:hover {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 .bs-card-media {
   padding-bottom: 82%;
@@ -665,7 +666,7 @@
 }
 .shopping .banner {
   background-color: #ffebb1;
-  background-image: url(/buyandshipdemo/assets/img/banner/shopping.png);
+  background-image: url(/assets/img/banner/shopping.png);
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: 200% auto;
@@ -674,13 +675,13 @@
 }
 @media (min-width: 768px) {
   .shopping .banner {
-    background-image: url(/buyandshipdemo/assets/img/banner/shopping@2x.png);
+    background-image: url(/assets/img/banner/shopping@2x.png);
     background-size: 150% auto;
   }
 }
 @media (min-width: 1200px) {
   .shopping .banner {
-    background-image: url(/buyandshipdemo/assets/img/banner/shopping@3x.png);
+    background-image: url(/assets/img/banner/shopping@3x.png);
     background-size: 100% auto;
   }
 }
@@ -758,7 +759,7 @@
 }
 .restrictions .banner .bs-container {
   height: 100%;
-  background-image: url(/buyandshipdemo/assets/img/banner/prohibited.png);
+  background-image: url(/assets/img/banner/prohibited.png);
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: auto 150px;
@@ -766,14 +767,14 @@
 }
 @media (min-width: 768px) {
   .restrictions .banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/prohibited@2x.png);
+    background-image: url(/assets/img/banner/prohibited@2x.png);
     background-size: auto 100%;
     background-position: 95% 45px;
   }
 }
 @media (min-width: 1200px) {
   .restrictions .banner .bs-container {
-    background-image: url(/buyandshipdemo/assets/img/banner/prohibited@3x.png);
+    background-image: url(/assets/img/banner/prohibited@3x.png);
   }
 }
 @media (min-width: 768px) {
@@ -790,9 +791,10 @@
     max-width: 280px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .restrictions .banner-title {
     max-width: 300px;
+    top: 63px;
   }
 }
 .restrictions .banner-subtitle {

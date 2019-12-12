@@ -21344,9 +21344,9 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
-  src: url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.eot);
+  src: url(/assets/font/nunito-v11-latin-regular.eot);
   /* IE9 Compat Modes */
-  src: local('Nunito Regular'), local('Nunito-Regular'), url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.eot?#iefix) format('embedded-opentype'),  url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.woff2) format('woff2'),  url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.woff) format('woff'),  url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.ttf) format('truetype'),  url(/buyandshipdemo/assets/font/nunito-v11-latin-regular.svg#Nunito) format('svg');
+  src: local('Nunito Regular'), local('Nunito-Regular'), url(/assets/font/nunito-v11-latin-regular.eot?#iefix) format('embedded-opentype'),  url(/assets/font/nunito-v11-latin-regular.woff2) format('woff2'),  url(/assets/font/nunito-v11-latin-regular.woff) format('woff'),  url(/assets/font/nunito-v11-latin-regular.ttf) format('truetype'),  url(/assets/font/nunito-v11-latin-regular.svg#Nunito) format('svg');
   /* Legacy iOS */
 }
 /* noto-sans-regular - latin */
@@ -21354,16 +21354,16 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.eot);
+  src: url(/assets/font/noto-sans-v9-latin-regular.eot);
   /* IE9 Compat Modes */
-  src: local('Noto Sans'), local('NotoSans'), url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.eot?#iefix) format('embedded-opentype'),  url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.woff2) format('woff2'),  url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.woff) format('woff'),  url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.ttf) format('truetype'),  url(/buyandshipdemo/assets/font/noto-sans-v9-latin-regular.svg#NotoSans) format('svg');
+  src: local('Noto Sans'), local('NotoSans'), url(/assets/font/noto-sans-v9-latin-regular.eot?#iefix) format('embedded-opentype'),  url(/assets/font/noto-sans-v9-latin-regular.woff2) format('woff2'),  url(/assets/font/noto-sans-v9-latin-regular.woff) format('woff'),  url(/assets/font/noto-sans-v9-latin-regular.ttf) format('truetype'),  url(/assets/font/noto-sans-v9-latin-regular.svg#NotoSans) format('svg');
   /* Legacy iOS */
 }
 html,
 body {
   font-family: 'Nunito', 'Noto Sans TC', -apple-system, system-ui, sans-serif;
-}
-* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
 }
 ul {
@@ -21728,7 +21728,7 @@ ul {
     text-align: left;
   }
   .register-footer .register-signup {
-    width: unset;
+    width: auto;
   }
   .register-footer .register-footer-notice {
     max-width: 260px;
@@ -21905,9 +21905,12 @@ html > div {
   padding: 0 16px;
   height: 64px;
   background-color: #262626;
-  color: white;
   position: relative;
   z-index: 30;
+  color: #FFFFFF;
+}
+.bs-header a {
+  color: #FFFFFF;
 }
 .header-l,
 .header-r {
@@ -22030,6 +22033,7 @@ html > div {
   -webkit-transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
   background-color: #FFFFFF;
+  overflow: hidden;
 }
 .mobile-nav .slinky-menu {
   background-color: #FFFFFF;
@@ -22096,7 +22100,7 @@ html > div {
   top: 64px;
 }
 .mobile-nav-inner {
-  max-height: calc(80vh - 64px - 8px);
+  max-height: calc(90vh - 64px - 8px);
   overflow: auto;
 }
 .mobile-nav-mask {
@@ -22193,6 +22197,7 @@ html > div {
   }
   .header-nav-item {
     display: inline-block;
+    font-weight: 600;
   }
   .header-nav-item + .header-nav-item {
     margin-left: 40px;
@@ -22215,7 +22220,6 @@ html > div {
     color: #FFFFFF;
     text-align: center;
     position: relative;
-    font-weight: 600;
   }
   .header-nav-item-link.active--exact {
     position: relative;
@@ -22346,7 +22350,7 @@ html > div {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20%20fill%3D%22%23FFFFFF%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2210%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9.333%203.333H8c-1.427%200-2%20.334-2%201.334v2h3.333L8.667%2010H6v10H2.667V10H0V6.667h2.667v-2C2.667%202%204%200%206.667%200%208.6%200%209.333.667%209.333.667v2.666z%22%2F%3E%3C%2Fsvg%3E");
   background-size: 100% 100%;
   width: 20px;
-  height: 20px;
+  height: 36px;
 }
 .bs-icon-instagram {
   display: inline-block;
@@ -22372,6 +22376,9 @@ html > div {
 .bs-footer {
   color: #FFFFFF;
   background-color: #262626;
+}
+.bs-footer a {
+  color: #FFFFFF;
 }
 .footer-graphic {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(92%, #FFFFFF), color-stop(8%, #262626));
@@ -22493,10 +22500,10 @@ html > div {
 @media (min-width: 576px) {
   .footer-bottom {
     height: 64px;
-    -webkit-box-orient: unset;
-    -webkit-box-direction: unset;
-        -ms-flex-direction: unset;
-            flex-direction: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -22628,7 +22635,7 @@ html > div {
   width: 100%;
 }
 a {
-  color: #FFFFFF;
+  color: #FF9E1B;
 }
 a:hover {
   color: #FB9219;
@@ -22861,6 +22868,8 @@ a:hover {
   cursor: pointer;
   -webkit-transition: all 1s;
   transition: all 1s;
+  display: inline-block;
+  text-align: center;
 }
 .bs-button--md {
   height: 35px;
@@ -22870,18 +22879,18 @@ a:hover {
   font-size: 16px;
   font-weight: 600;
 }
-.bs-button--primary {
+.bs-button.bs-button--primary {
   background: linear-gradient(133.97deg, #F4663A 0%, #FF9E1B 100%);
   color: #FFFFFF;
 }
-.bs-button--default {
+.bs-button.bs-button--default {
   background: #FFFFFF;
 }
-.bs-button--solid {
+.bs-button.bs-button--solid {
   -webkit-box-shadow: 0 2px 4px 0 rgba(38, 38, 38, 0.3);
           box-shadow: 0 2px 4px 0 rgba(38, 38, 38, 0.3);
 }
-.bs-button--disabled {
+.bs-button.bs-button--disabled {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -22891,10 +22900,10 @@ a:hover {
   opacity: 0.5;
   background: linear-gradient(220deg, #F4663A 0%, #FF9E1B 100%);
 }
-.bs-button--outline {
+.bs-button.bs-button--outline {
   border-radius: 5px;
 }
-.bs-button--outline.bs-button--primary {
+.bs-button.bs-button--outline.bs-button--primary {
   background: #FFFFFF;
   border: 1px solid #FF9E1B;
   color: #FF9E1B;
@@ -22953,6 +22962,8 @@ a:hover {
   cursor: pointer;
   -webkit-transition: all 1s;
   transition: all 1s;
+  display: inline-block;
+  text-align: center;
 }
 .bs-button--md {
   height: 35px;
@@ -22962,18 +22973,18 @@ a:hover {
   font-size: 16px;
   font-weight: 600;
 }
-.bs-button--primary {
+.bs-button.bs-button--primary {
   background: linear-gradient(133.97deg, #F4663A 0%, #FF9E1B 100%);
   color: #FFFFFF;
 }
-.bs-button--default {
+.bs-button.bs-button--default {
   background: #FFFFFF;
 }
-.bs-button--solid {
+.bs-button.bs-button--solid {
   -webkit-box-shadow: 0 2px 4px 0 rgba(38, 38, 38, 0.3);
           box-shadow: 0 2px 4px 0 rgba(38, 38, 38, 0.3);
 }
-.bs-button--disabled {
+.bs-button.bs-button--disabled {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -22983,10 +22994,10 @@ a:hover {
   opacity: 0.5;
   background: linear-gradient(220deg, #F4663A 0%, #FF9E1B 100%);
 }
-.bs-button--outline {
+.bs-button.bs-button--outline {
   border-radius: 5px;
 }
-.bs-button--outline.bs-button--primary {
+.bs-button.bs-button--outline.bs-button--primary {
   background: #FFFFFF;
   border: 1px solid #FF9E1B;
   color: #FF9E1B;
@@ -23033,8 +23044,8 @@ a:hover {
 .bs-dialog-container {
     top: 15%;
     left: 50%;
-    right: unset;
-    bottom: unset;
+    right: auto;
+    bottom: auto;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     min-width: 686px;

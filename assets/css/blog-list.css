@@ -43,7 +43,7 @@
   background-color: #FF9E1B;
 }
 .bs-pagger-item-content--unclick {
-  cursor: unset;
+  cursor: none;
 }
 
 .bs-blog {

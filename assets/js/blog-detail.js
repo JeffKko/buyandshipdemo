@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/buyandshipdemo";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -174,12 +174,10 @@ __webpack_require__.r(__webpack_exports__);
 
 Object(_assets_js_utils_hybridPage_js__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])();
 new _assets_js_main_js__WEBPACK_IMPORTED_MODULE_0__[/* Page */ "a"]({
-  el: '#app',
+  el: '#bsMain',
   components: {},
   data: function data() {
-    return {
-      isShowGraphic: false
-    };
+    return {};
   },
   mounted: function mounted() {},
   methods: {}

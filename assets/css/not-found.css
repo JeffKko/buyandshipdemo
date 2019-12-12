@@ -6,7 +6,7 @@
 @media (min-width: 1200px) {
   .text-h6 {
     font-size: 96px;
-    font-weight: unset;
+    font-weight: normal;
   }
 }
 @media (min-width: 768px) {
@@ -133,7 +133,7 @@
 }
 @media (min-width: 1200px) {
   .error__description_button {
-    width: unset;
+    width: auto;
   }
 }
 
